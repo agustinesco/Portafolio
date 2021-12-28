@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.navegacion{
+    background-color: blueviolet;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    position: fixed;
+    left: 0%;
+    z-index: 100;
+}
+.navegacion a{
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 10px;
+    padding: 5px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;
+}
+
+.imagen-superior{
+    position: relative;
+    width: 100vw;
+    background: linear-gradient(to top left, #9900cc 0%, #ff99cc 100%);
+    height: 550px;
+}
+.imagen-superior img{
+    width: 100%;
+    z-index: -1;
+}
+
+.simularEscritura{
+    position: absolute;
+    max-width: 60%;
+    height: 20%;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    top: 15%;
+}
+
+.agustinesco{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+}
+
+.texto{
+    animation: aparecerTexto 1.7s ease-in;
+}
+
+
+
+@keyframes aparecerTexto {
+    0%{
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+}
+
+.retrato{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    margin: 100px;
+}
+
+.marco{
+    height: 300px;
+    width: 300px;
+    z-index: -10;
+    background-color: purple;
+
+    animation: aparecerMarco 1.7s ease-in;
+}
+
+@keyframes aparecerMarco {
+    0%{
+        transform: translateX(400%) rotate(180deg);
+    }
+}
+
+.agustinesco img{
+    position: absolute;
+    width: 250px;
+    height: auto;
+}
