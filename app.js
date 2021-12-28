@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 function cargarApp(){
     escribiendo();
+    eventListenerANav();
 }
 
 
@@ -45,4 +46,16 @@ function escribiendo() {
         }, delayEscritura);
     }
     
+}
+
+function eventListenerANav(){
+    const botones = document.querySelectorAll('.boton-nav');
+
+    botones.forEach(boton => {
+        boton.addEventListener('click', ()=>{
+            const botonSeleccionado = document.querySelector('.boton-nav.seleccionado');
+            if(botonSeleccionado) botonSeleccionado.classList.remove('seleccionado');
+            boton.classList.add('seleccionado');
+        })
+    });
 }
