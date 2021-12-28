@@ -1,0 +1,48 @@
+.proyectos{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.proyecto{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform .7s ease-in-out;
+
+    & img{
+        width: 100%;
+        max-height: 200px;
+        filter: opacity(.5);
+        transition: filter .7s ease-in-out;
+        border-radius: 20px;
+    }
+    &:hover{
+        transform: scale(1.1);
+        & img{
+            filter: opacity(1);
+        }
+    }
+
+    & p{
+        text-align: center;
+    }
+}
+.boton-proyecto{
+    text-decoration: none;
+    padding: 10px 25px;
+    background-color: rgb(204, 102, 255);
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 10px;
+    color: white;
+    align-self: flex-start;
+    transition: background-color .4s ease-in-out;
+
+    &:hover{
+        background-color: darken($color: rgb(204, 102, 255), $amount: 20%);
+    }
+}

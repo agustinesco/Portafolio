@@ -1,0 +1,57 @@
+.sobreMi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.informacion{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 80%;
+}
+
+.texto-sobreMi{
+    animation: aparecerTexto 1.7s ease-in;
+    font-weight: 500;
+    font-size: large;
+}
+
+@keyframes aparecerTexto {
+    0%{
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+}
+
+.retrato{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+
+    & img{
+        position: absolute;
+        max-width: 250px;
+        height: auto;
+        background-color: white;
+    }
+}
+
+.marco{
+    height: 275px;
+    width: 275px;
+    z-index: -1;
+    background-color: purple;
+    animation: aparecerMarco 1.7s ease-in;
+}
+
+@keyframes aparecerMarco {
+    0%{
+        transform: translateX(400%) rotate(180deg);
+    }
+}
+

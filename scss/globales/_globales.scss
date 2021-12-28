@@ -1,0 +1,15 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.contenedor{
+    max-width: 95%;
+    margin: 100px auto 0 auto;
+}
+.contenedor::before{
+    display: block;
+    content: " ";
+    margin-top: -50px;
+    height: 150px;
+    visibility: hidden;
+}
