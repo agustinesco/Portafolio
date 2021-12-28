@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/app.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700;900&display=swap" rel="stylesheet">
@@ -13,25 +13,56 @@
 <body>
     <header>
         <nav class="navegacion">
-            <a href="#informacion">Informacion</a>
-            <a href="#escritura">escritura</a>
+            <a class="boton-nav" href="#informacion">Informacion</a>
+            <a class="boton-nav" href="#proyectos">proyectos</a>
             <a href=""></a>
             <a href=""></a>
         </nav>
         <div class="imagen-superior">
             <p class="simularEscritura" id="escritura"></p>
-            <img src="/imagenes/header.jpeg" alt="" class="imagen-superior">
         </div>
     </header>
 
-    <div class="agustinesco" id="informacion">
-        <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aspernatur harum neque? Velit odit delectus rem obcaecati doloremque dolores dicta, ratione culpa rerum praesentium dolor veritatis hic porro maxime officia. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, quibusdam laborum suscipit obcaecati, commodi eius, vero nobis repellendus impedit et placeat nulla maxime explicabo quod temporibus consequatur culpa facilis cum!
-        Odit nostrum accusamus dolorum harum animi similique iste! Veritatis laborum neque sunt! Accusamus, quas pariatur.</p>
-        <div class="retrato">
-            <div class="marco"></div>
-            <img src="/imagenes/agustinesco.jpeg" alt="">
-        </div>
-    </div>
+    <main>
+        <section class="sobreMi contenedor" id="informacion">
+                <h1>Sobre Mi</h1>
+                <div class="informacion">
+                    <p class="texto-sobreMi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aspernatur harum neque? Velit odit delectus rem obcaecati doloremque dolores dicta, ratione culpa rerum praesentium dolor veritatis hic porro maxime officia. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, quibusdam laborum suscipit obcaecati, commodi eius, vero nobis repellendus impedit et placeat nulla maxime explicabo quod temporibus consequatur culpa facilis cum!
+                        Odit nostrum accusamus dolorum harum animi similique iste! Veritatis laborum neque sunt! Accusamus, quas pariatur.</p>
+                        <div class="retrato">
+                            <div class="marco"></div>
+                            <img src="/imagenes/agustinesco.png" alt="">
+                        </div>
+                </div>
+        </section>
+    
+        <section class="contenedor" id="proyectos">
+                <h1>Mis proyectos</h1>
+                <ul class="proyectos">
+                    <li class="proyecto">
+                        <h3>Calculadora simple</h3>
+                        <img src="/imagenes/calculadora.png" alt="">
+                        <p>Calculadora relizada para reforzar la logica con javascript y uso de selectores</p>
+                        <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/calculadora-simple/">Visitar Proyecto</a>      
+                    </li>
+                    <li class="proyecto">
+                        <h3>Snake</h3>
+                        <img src="/imagenes/snake.png" alt="">
+                        <p>Juego snake realizado para reforzar javascript y el uso de eventListeners</p>
+                        <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/snake-html/">Visitar Proyecto</a>   
+                    </li>
+                    <li class="proyecto">
+                        <h3>App Salon</h3>
+                        <img src="/imagenes/appSalon.png" alt="Imagen sobre el proyecto de una app de salon">
+                        <p>Aplicacion de salon de belleza realizada como parte de un curso full Stack , version con mas funcionalidad en Repositorio</p>
+                        <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/App-Salon/">Visitar Proyecto</a>
+                    </li>
+                </ul>
+        </section>
+        <section>
+
+        </section>
+    </main>
 
 </body>
 
