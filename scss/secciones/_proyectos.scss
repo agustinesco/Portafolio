@@ -3,6 +3,7 @@
     grid-template-columns: repeat(3,1fr);
     place-items: center;
     gap: 20px;
+    padding: 40px;
 }
 .proyecto{
     list-style: none;
@@ -13,10 +14,11 @@
     border-radius: 10px;
     padding: 20px;
     transition: transform .7s ease-in-out;
+    height: 80vh;
 
     & img{
         width: 100%;
-        max-height: 200px;
+        max-height: 30vh;
         filter: opacity(.5);
         transition: filter .7s ease-in-out;
         border-radius: 20px;
