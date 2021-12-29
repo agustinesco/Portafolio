@@ -4,12 +4,13 @@ html{
 
 .contenedor{
     max-width: 95%;
-    margin: 100px auto 0 auto;
+    min-height: 90vh;
+    margin: 0 auto;
 }
 .contenedor::before{
     display: block;
     content: " ";
     margin-top: -50px;
-    height: 150px;
+    height: 110px;
     visibility: hidden;
 }
