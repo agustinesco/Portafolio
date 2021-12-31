@@ -1,17 +1,24 @@
+@use '../globales/variables' as v;
 html{
     scroll-behavior: smooth;
 }
 
-.contenedor{
-    max-width: 95%;
-    min-height: 90vh;
-    margin: 0 auto;
-    overflow: hidden;
+body{
+    background-color: v.$color-fondo-body ;
 }
-.contenedor::before{
-    display: block;
-    content: " ";
-    margin-top: -50px;
-    height: 110px;
-    visibility: hidden;
+
+section{
+    display: grid;
+    place-items: center;
+    padding: v.$altura-barra-superior 0 0 0;
+    scroll-margin-top: v.$altura-barra-superior;
+    background-color: white;
+    margin: 100px 0;
+    box-shadow: -2px 1px 20px 12px rgba(0,0,0,0.50);
+}
+
+a{
+    text-decoration: none;
+    user-select: none;
+    cursor: pointer !important;
 }
