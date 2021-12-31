@@ -4,65 +4,135 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/app.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700;900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/app.css">
+    
+    
+    <link rel="shortcut icon" href="/imagenes/favicon.ico" type="image/x-icon">
+    <title>Portafolio</title>
 </head>
 <body>
     <header>
         <nav class="navegacion">
-            <a class="boton-nav" href="#informacion">Informacion</a>
-            <a class="boton-nav" href="#proyectos">proyectos</a>
-            <a href=""></a>
+            <a class="boton-nav" href="#informacion">Sobre mi</a>
+            <a class="boton-nav" href="#proyectos">Proyectos</a>
+            <a class="boton-nav" href="#contacto">Contacto</a>
             <a href=""></a>
         </nav>
-        <div class="imagen-superior">
+        <div class="imagen-superior" id="imagen-header">
             <p class="simularEscritura" id="escritura"></p>
+            <p class="nombre">Hola soy Agustin Escobar</p>
         </div>
     </header>
-
     <main>
-        <section class="sobreMi contenedor" id="informacion">
-                <h1>Sobre Mi</h1>
-                <div class="informacion">
-                    <p class="texto-sobreMi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aspernatur harum neque? Velit odit delectus rem obcaecati doloremque dolores dicta, ratione culpa rerum praesentium dolor veritatis hic porro maxime officia. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, quibusdam laborum suscipit obcaecati, commodi eius, vero nobis repellendus impedit et placeat nulla maxime explicabo quod temporibus consequatur culpa facilis cum!
-                        Odit nostrum accusamus dolorum harum animi similique iste! Veritatis laborum neque sunt! Accusamus, quas pariatur.</p>
-                        <div class="retrato">
-                            <div class="marco"></div>
-                            <img src="imagenes/agustinesco.png" alt="">
-                        </div>
+        <section  id="informacion">
+                <div class="sobreMi contenedor centrado">
+                    <h1>Sobre Mi</h1>
+                    <div class="informacion-sobreMi centrado">
+                        <p class="texto-sobreMi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aspernatur harum neque? Velit odit delectus rem obcaecati doloremque dolores dicta, ratione culpa rerum praesentium dolor veritatis hic porro maxime officia. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, quibusdam laborum suscipit obcaecati, commodi eius, vero nobis repellendus impedit et placeat nulla maxime explicabo quod temporibus consequatur culpa facilis cum!
+                            Odit nostrum accusamus dolorum harum animi similique iste! Veritatis laborum neque sunt! Accusamus, quas pariatur.</p>
+                            <div class="retrato">
+                                <div class="marco"></div>
+                                <img src="imagenes/agustinesco.png" alt="">
+                            </div>
+                    </div>
+                    <h2>Tecnologias que conozco</h2>
+                    <p class="texto-tecnologias">Estas son algunas tecnologías con las que ya hice algun tipo de trabajo, de ser necesario siempre estoy dispuesto a aprender una nueva </p>
+                    <div class="iconos-sobreMi centrado">
+                        <img src="imagenes/iconos/php.png" alt="" class="icono">
+                        <img src="imagenes/iconos/html-5.png" alt="" class="icono">
+                        <img src="imagenes/iconos/css-3.png" alt="" class="icono">
+                        <img src="imagenes/iconos/js.png" alt="" class="icono">
+                        <img src="imagenes/iconos/java.png" alt="" class="icono">
+                        <img src="imagenes/iconos/sass.png" alt="" class="icono">
+                        <img src="imagenes/iconos/git.png" alt="" class="icono">
+                        <img src="imagenes/iconos/mysql.png" alt="" class="icono">
+                    </div>
                 </div>
         </section>
     
-        <section class="contenedor" id="proyectos">
-                <h1>Mis proyectos</h1>
-                <ul class="proyectos">
-                    <li class="proyecto">
-                        <h3>Calculadora simple</h3>
-                        <img src="imagenes/calculadora.png" alt="">
-                        <p>Calculadora relizada para reforzar la logica con javascript y uso de selectores</p>
-                        <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/calculadora-simple/">Visitar Proyecto</a>      
-                    </li>
-                    <li class="proyecto">
-                        <h3>Snake</h3>
-                        <img src="imagenes/snake.png" alt="">
-                        <p>Juego snake realizado para reforzar javascript y el uso de eventListeners</p>
-                        <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/snake/">Visitar Proyecto</a>   
-                    </li>
-                    <li class="proyecto">
-                        <h3>App Salon</h3>
-                        <img src="imagenes/appSalon.png" alt="Imagen sobre el proyecto de una app de salon">
-                        <p>Aplicacion de salon de belleza realizada como parte de un curso full Stack , version con mas funcionalidad en Repositorio</p>
-                        <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/App-Salon/">Visitar Proyecto</a>
-                    </li>
-                </ul>
+        <section id="proyectos">
+                <div class="contenedor contenedor-proyectos">
+                    <h1>Mis proyectos</h1>
+                    <ul class="proyectos">
+                        <li class="proyecto">
+                            <h3>Calculadora simple</h3>
+                            <img src="imagenes/calculadora.png" alt="">
+                            <p>Calculadora relizada para reforzar la logica con javascript y uso de selectores</p>
+                            <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/calculadora-simple/">Visitar Proyecto</a>      
+                        </li>
+                        <li class="proyecto">
+                            <h3>Snake</h3>
+                            <img src="imagenes/snake.png" alt="">
+                            <p>Juego snake realizado para reforzar javascript y el uso de eventListeners</p>
+                            <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/snake/">Visitar Proyecto</a>   
+                        </li>
+                        <li class="proyecto">
+                            <h3>App Salon</h3>
+                            <img src="imagenes/appSalon.png" alt="Imagen sobre el proyecto de una app de salon">
+                            <p>Aplicacion de salon de belleza realizada como parte de un curso full Stack , version con mas funcionalidad en Repositorio</p>
+                            <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/App-Salon/">Visitar Proyecto</a>
+                        </li>
+                    </ul>
+                </div>
         </section>
-        <section>
+        <section id="contacto">
+            <div class="contenedor contactame">
+                <h1>Contactame</h1>
+                <p>¿Estas interesado en mis proyectos y me quieres para algun trabajo? No dudes en contactarme</p>
 
+                <p class="formas">Formas de contacto:</p>
+                <div class="iconos">
+                    <span class="material-icons-outlined metodo metodo-email">email</span>
+                    <span class="material-icons-outlined metodo metodo-wsp">
+                        whatsapp
+                        </span>
+                </div>
+
+                <form class="formulario" action="">
+                    <div class="campo">
+                        <label>Nombre: </label>
+                        <input 
+                            type="text" 
+                            name="nombre" 
+                            id="nombre"
+                            placeholder="Tu nombre"
+                        />
+                        
+                    </div>
+                    <div class="campo">
+                        <label>Email: </label>
+                        <input 
+                            type="email" 
+                            name="email" 
+                            id="email"
+                            placeholder="Tu email"
+                        />
+                    </div>
+                    <div class="campo">
+                        <label>Mensaje: </label>
+                        <textarea 
+                            name="mensaje" 
+                            id="mensaje" 
+                            cols="1" 
+                            rows="10">
+                        </textarea>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
+
+    <aside class="volver ">
+        <a class="flecha-volver " href="#imagen-header">
+            <img src="/imagenes/iconos/linea arriba.png" alt="">
+        </a>
+    </aside>
 
     <footer class="footer">
         <h3 class="footer-texto">Pagina desarrollada por Agustin Lautaro Escobar - &#169 </h3>
