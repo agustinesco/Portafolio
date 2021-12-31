@@ -1,0 +1,21 @@
+@use '../globales/variables' as v;
+
+.flecha-volver{
+    visibility: hidden;
+    position: fixed;
+    width: v.$tamaño-flecha;
+    height: v.$tamaño-flecha;
+    bottom: 10vh;
+    right: 5vw;
+    padding: 40px;
+    background-color:#6b21a8  ;
+    font-size: 50px;
+    border-radius: 50%;
+    color: white;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.mostrar-flecha{
+            visibility: visible;   
+    }
+}

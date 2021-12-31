@@ -12,6 +12,7 @@ function cargarApp(){
     escribirOraciones();
     eventListenerANav();
     agregarFechaFooter();
+    agregarObservadores()
 }
 
 function eventListenerANav(){
@@ -87,4 +88,41 @@ function agregarFechaFooter() {
 
 }
 
+function agregarObservadores() {
+    observadorSobreMi();
+    observadorFlechaVolver();
+}
 
+function observadorSobreMi() {
+    let observer = new IntersectionObserver(
+        entries=>{
+            entries.forEach(entry=>{
+                entry.target.classList.toggle('animar',entry.isIntersecting);
+                if(entry.isIntersecting) observer.unobserve(entry.target);
+            })
+    
+        },{
+            threshold:0.75
+        });
+    
+        const sobreMi =document.querySelector('.informacion-sobreMi');
+        observer.observe(sobreMi);
+}
+
+function observadorFlechaVolver() {
+    let observer = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+            const flecha = document.querySelector('.flecha-volver');
+            console.log(entry.isIntersecting)
+            if(entry.isIntersecting){
+                flecha.classList.remove('mostrar-flecha');
+            }else{
+                flecha.classList.add('mostrar-flecha');
+            }
+        })
+
+    })
+
+    const header = document.querySelector('.imagen-superior');
+    observer.observe(header);
+}
