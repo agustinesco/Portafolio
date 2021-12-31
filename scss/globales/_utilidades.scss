@@ -1,0 +1,13 @@
+@use 'variables' as v;
+
+.centrado{
+    display: grid;
+    place-items: center;
+}
+
+.contenedor{
+    width: 95%;
+    min-height: 100vh - v.$altura-barra-superior;
+    margin: 0 auto 50px auto;
+    overflow: hidden;
+}
