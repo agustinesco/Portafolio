@@ -1,0 +1,54 @@
+@use '../globales/variables' as v;
+
+.contactame{
+    display: grid;
+    align-items: center;
+}
+
+.formulario{
+    justify-self: center;
+    width: 50%;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #67e8f9  ;
+    border:3px solid black;
+    margin-top: 50px;
+    .campo{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        label{
+            flex: 1 0 20px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        input,textarea{
+            border-style: none;
+            flex:4; 
+            padding: 10px;
+            border-radius: 10px;
+        }
+    }
+}
+
+.contactame{
+
+    .iconos{
+        justify-self: center;
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+.metodo{
+    background-color: lighten($color: v.$naranja, $amount: 10%);
+    padding: 20px;
+    border-radius: 20%;
+    font-size: 84px;
+    cursor: pointer;
+}
+.formas{
+    font-weight: 700;
+}
