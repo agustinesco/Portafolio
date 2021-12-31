@@ -1,3 +1,6 @@
+@use '../globales/variables' as v;
+
+
 @mixin centrado {
     display: grid;
     place-items: center;
