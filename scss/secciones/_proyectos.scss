@@ -1,7 +1,11 @@
+@use '../globales/variables' as v;
+@use '../includes/mixins' as m;
+
+
+
+
 .proyectos{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    place-items: center;
+    @include m.grid(3);
     gap: 20px;
     padding: 40px;
 }
@@ -19,14 +23,14 @@
     & img{
         width: 100%;
         max-height: 30vh;
-        filter: opacity(.5);
+        filter: blur(2px);
         transition: filter .7s ease-in-out;
         border-radius: 20px;
     }
     &:hover{
         transform: scale(1.1);
         & img{
-            filter: opacity(1);
+            filter: blur(0);
         }
     }
 
@@ -34,18 +38,19 @@
         text-align: center;
     }
 }
+
+
 .boton-proyecto{
     text-decoration: none;
     padding: 10px 25px;
-    background-color: rgb(204, 102, 255);
+    background-color: v.$naranja ;
     font-size: 20px;
     font-weight: 700;
     border-radius: 10px;
     color: white;
     align-self: flex-start;
-    transition: background-color .4s ease-in-out;
 
     &:hover{
-        background-color: darken($color: rgb(204, 102, 255), $amount: 20%);
+        background-color: darken($color: v.$naranja , $amount: 10%);
     }
 }
