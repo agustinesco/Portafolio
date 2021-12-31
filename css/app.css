@@ -399,6 +399,7 @@ p {
   overflow: hidden;
 }
 
+/** Media Queries **/
 .navegacion {
   background-color: #7e22ce;
   width: 100%;
@@ -456,7 +457,6 @@ p {
   color: black;
 }
 
-/** Media Queries **/
 .informacion-sobreMi {
   grid-template-columns: 2fr 1fr;
   gap: 20px;
