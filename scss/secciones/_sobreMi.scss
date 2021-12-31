@@ -1,27 +1,34 @@
-.sobreMi{
-    display: grid;
-    place-items: center;
-}
+@use '../globales/variables' as v;
+@use '../includes/mixins' as m;
 
-.informacion{
-    display: flex;
-    align-items: center;
+
+
+.informacion-sobreMi{
+    grid-template-columns: 2fr 1fr;
     gap: 20px;
     max-width: 80%;
 }
 
-.texto-sobreMi{
-    animation: aparecerTexto 1.7s ease-in;
-    font-weight: 500;
-    font-size: large;
-}
-
-@keyframes aparecerTexto {
-    0%{
-        transform: translateX(-50%);
-        opacity: 0;
+.animar{
+    .texto-sobreMi{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    .marco{
+        transform: translateX(0%) rotate(-180deg);
     }
 }
+
+.texto-sobreMi{
+    font-weight: 500;
+    font-size: large;
+    transform: translateX(-50%);
+    opacity: 0;
+
+    transition: transform v.$tiempo-animacion-sobreMi ease-in, opacity v.$tiempo-animacion-sobreMi ease-in;
+}
+
+
 
 .retrato{
     display: flex;
@@ -41,14 +48,26 @@
 .marco{
     height: 275px;
     width: 275px;
-    z-index: -1;
-    background-color: purple;
-    animation: aparecerMarco 1.7s ease-in;
+    z-index: 0;
+    background-color:#a5b4fc ;
+    transform: translateX(400%);
+    transition: transform v.$tiempo-animacion-sobreMi ease-in;
+
 }
 
-@keyframes aparecerMarco {
-    0%{
-        transform: translateX(400%) rotate(180deg);
+.texto-tecnologias{
+    font-weight: 600;
+    text-align: center;
+}
+
+.iconos-sobreMi{
+    padding: 50px;
+    width: 100%;
+    @include m.grid(4);
+    gap: 40px 5px;
+    .icono{
+        height: 100px;
+        width: 100px;
     }
 }
 
