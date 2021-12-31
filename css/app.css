@@ -447,6 +447,7 @@ p {
 
 .simularEscritura {
   top: 15%;
+  text-align: left;
 }
 
 .nombre {
@@ -520,53 +521,80 @@ p {
 }
 
 .proyectos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  gap: 20px;
-  padding: 40px;
+  padding: 70px;
+}
+@media (min-width: 768px) {
+  .proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 25px 20px;
+  }
 }
 
 .proyecto {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
   border: 1px solid grey;
   border-radius: 10px;
-  padding: 20px;
-  transition: transform 0.7s ease-in-out;
-  height: 80vh;
+  padding: 15px;
+  height: 70vh;
+  margin-bottom: 20px;
 }
 .proyecto img {
   width: 100%;
-  max-height: 30vh;
-  filter: blur(2px);
   transition: filter 0.7s ease-in-out;
   border-radius: 20px;
+  height: 200px;
 }
-.proyecto:hover {
-  transform: scale(1.1);
+.proyecto h3 {
+  font-size: 20px;
 }
-.proyecto:hover img {
-  filter: blur(0);
+@media (min-width: 768px) {
+  .proyecto {
+    margin-bottom: 0;
+    transition: transform 0.7s ease-in-out;
+  }
+  .proyecto img {
+    filter: blur(2px);
+    height: 20vh;
+  }
+  .proyecto:hover {
+    transform: scale(1.1);
+  }
+  .proyecto:hover img {
+    filter: blur(0);
+  }
 }
 .proyecto p {
+  font-size: 15px;
   text-align: center;
+}
+
+.proyecto .contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .boton-proyecto {
   text-decoration: none;
-  padding: 10px 25px;
+  padding: 10px 20px;
   background-color: #f59e0b;
-  font-size: 20px;
   font-weight: 700;
   border-radius: 10px;
   color: white;
-  align-self: flex-start;
+  text-align: center;
 }
 .boton-proyecto:hover {
   background-color: #c57f08;
+}
+@media (min-width: 768px) {
+  .boton-proyecto {
+    width: fit-content;
+  }
 }
 
 .contactame {
