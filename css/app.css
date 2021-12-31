@@ -2,19 +2,24 @@ html {
   scroll-behavior: smooth;
 }
 
-.contenedor {
-  max-width: 95%;
-  min-height: 90vh;
-  margin: 0 auto;
-  overflow: hidden;
+body {
+  background-color: #c084fc;
 }
 
-.contenedor::before {
-  display: block;
-  content: " ";
-  margin-top: -50px;
-  height: 110px;
-  visibility: hidden;
+section {
+  display: grid;
+  place-items: center;
+  padding: 5vh 0 0 0;
+  scroll-margin-top: 5vh;
+  background-color: white;
+  margin: 100px 0;
+  box-shadow: -2px 1px 20px 12px rgba(0, 0, 0, 0.5);
+}
+
+a {
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer !important;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -376,12 +381,31 @@ h3 {
   font-size: 30px;
 }
 
+p {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.centrado {
+  display: grid;
+  place-items: center;
+}
+
+.contenedor {
+  width: 95%;
+  min-height: 95vh;
+  margin: 0 auto 50px auto;
+  overflow: hidden;
+}
+
 .navegacion {
-  background-color: blueviolet;
+  background-color: #7e22ce;
   width: 100%;
-  max-height: 10vh;
+  height: 5vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 20px 0;
   position: fixed;
   left: 0%;
@@ -400,17 +424,18 @@ h3 {
   transition: background-color 0.2s ease-in;
 }
 .boton-nav.seleccionado {
-  background-color: orange;
+  background-color: #f59e0b;
 }
 
 .imagen-superior {
   position: relative;
   width: 100%;
-  background: linear-gradient(to top left, #9900cc 0%, #ff99cc 100%);
-  height: 550px;
+  background: linear-gradient(to bottom right, #9900cc 0%, #ff99cc 100%);
+  height: 100vh;
+  box-shadow: -2px 1px 20px 12px rgba(0, 0, 0, 0.5);
 }
 
-.simularEscritura {
+.simularEscritura, .nombre {
   position: absolute;
   max-width: 60%;
   height: 20%;
@@ -418,33 +443,41 @@ h3 {
   font-size: 30px;
   font-weight: 900;
   color: white;
+}
+
+.simularEscritura {
   top: 15%;
 }
 
-.sobreMi {
-  display: grid;
-  place-items: center;
+.nombre {
+  bottom: -10%;
+  right: 0;
+  color: black;
 }
 
-.informacion {
-  display: flex;
-  align-items: center;
+/** Media Queries **/
+.informacion-sobreMi {
+  grid-template-columns: 2fr 1fr;
   gap: 20px;
   max-width: 80%;
 }
 
-.texto-sobreMi {
-  animation: aparecerTexto 1.7s ease-in;
-  font-weight: 500;
-  font-size: large;
+.animar .texto-sobreMi {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.animar .marco {
+  transform: translateX(0%) rotate(-180deg);
 }
 
-@keyframes aparecerTexto {
-  0% {
-    transform: translateX(-50%);
-    opacity: 0;
-  }
+.texto-sobreMi {
+  font-weight: 500;
+  font-size: large;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: transform 1.3s ease-in, opacity 1.3s ease-in;
 }
+
 .retrato {
   display: flex;
   justify-content: center;
@@ -462,20 +495,34 @@ h3 {
 .marco {
   height: 275px;
   width: 275px;
-  z-index: -1;
-  background-color: purple;
-  animation: aparecerMarco 1.7s ease-in;
+  z-index: 0;
+  background-color: #a5b4fc;
+  transform: translateX(400%);
+  transition: transform 1.3s ease-in;
 }
 
-@keyframes aparecerMarco {
-  0% {
-    transform: translateX(400%) rotate(180deg);
-  }
+.texto-tecnologias {
+  font-weight: 600;
+  text-align: center;
 }
+
+.iconos-sobreMi {
+  padding: 50px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 40px 5px;
+}
+.iconos-sobreMi .icono {
+  height: 100px;
+  width: 100px;
+}
+
 .proyectos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  place-items: center;
+  grid-template-rows: repeat(1, 1fr);
   gap: 20px;
   padding: 40px;
 }
@@ -494,7 +541,7 @@ h3 {
 .proyecto img {
   width: 100%;
   max-height: 30vh;
-  filter: opacity(0.5);
+  filter: blur(2px);
   transition: filter 0.7s ease-in-out;
   border-radius: 20px;
 }
@@ -502,7 +549,7 @@ h3 {
   transform: scale(1.1);
 }
 .proyecto:hover img {
-  filter: opacity(1);
+  filter: blur(0);
 }
 .proyecto p {
   text-align: center;
@@ -511,20 +558,89 @@ h3 {
 .boton-proyecto {
   text-decoration: none;
   padding: 10px 25px;
-  background-color: #cc66ff;
+  background-color: #f59e0b;
   font-size: 20px;
   font-weight: 700;
   border-radius: 10px;
   color: white;
   align-self: flex-start;
-  transition: background-color 0.4s ease-in-out;
 }
 .boton-proyecto:hover {
-  background-color: #aa00ff;
+  background-color: #c57f08;
+}
+
+.contactame {
+  display: grid;
+  align-items: center;
+}
+
+.formulario {
+  justify-self: center;
+  width: 50%;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: #67e8f9;
+  border: 3px solid black;
+  margin-top: 50px;
+}
+.formulario .campo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.formulario .campo label {
+  flex: 1 0 20px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.formulario .campo input, .formulario .campo textarea {
+  border-style: none;
+  flex: 4;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.contactame .iconos {
+  justify-self: center;
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.metodo {
+  background-color: #f7b13c;
+  padding: 20px;
+  border-radius: 20%;
+  font-size: 84px;
+  cursor: pointer;
+}
+
+.formas {
+  font-weight: 700;
+}
+
+.flecha-volver {
+  visibility: hidden;
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  bottom: 10vh;
+  right: 5vw;
+  padding: 40px;
+  background-color: #6b21a8;
+  font-size: 50px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flecha-volver.mostrar-flecha {
+  visibility: visible;
 }
 
 .footer {
-  padding: 30px 0;
+  padding: 10px 0;
   background-color: blueviolet;
   margin-top: 150px;
   color: white;
