@@ -5,11 +5,12 @@
 
 
 .proyectos{
+    padding: 70px;
+    margin: 0;
     @include m.tablet{
         @include m.grid(3);
-        gap: 15px 20px;
+        gap: 3% 2%;
     }
-    padding: 70px ;
 }
 .proyecto{
     list-style: none;
@@ -18,11 +19,13 @@
     justify-content: space-between;
     border: 1px solid grey;
     border-radius: 10px;
-    padding: 15px;
+    padding:0 15px 15px 15px;
     height: fit-content;
-    
+    margin-bottom: 20px;
+    width: 80%;
+
     & img{
-        width: 80%;
+        width: 90%;
         transition: filter .7s ease-in-out;
         border-radius: 20px;
         height: 200px;
@@ -35,6 +38,8 @@
     @include m.tablet{
         margin-bottom: 0;
         transition: transform .7s ease-in-out;
+        height: 70vh;
+        width: fit-content;
 
         & img{
             filter: blur(2px);
@@ -47,9 +52,6 @@
             }
         }
     }
-
-    
-
     & p{
         font-size: 15px;
         text-align: center;
@@ -58,7 +60,7 @@
 .proyecto .contenido{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .boton-proyecto{
