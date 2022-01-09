@@ -1,6 +1,7 @@
 @use '../globales/variables' as v;
 html{
     scroll-behavior: smooth;
+    scroll-padding-top: 70px;
 }
 
 body{
@@ -11,7 +12,6 @@ section{
     display: grid;
     place-items: center;
     padding: v.$altura-barra-superior 0 0 0;
-    scroll-margin-top: v.$altura-barra-superior;
     background-color: white;
     margin: 100px 0;
     box-shadow: -2px 1px 20px 12px rgba(0,0,0,0.50);
@@ -21,4 +21,17 @@ a{
     text-decoration: none;
     user-select: none;
     cursor: pointer !important;
+}
+
+.boton{
+    padding: 20px 40px;
+    background-color: v.$naranja;
+    border: none;
+    font-weight: 700;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    &:hover{
+        background-color: darken($color: v.$naranja, $amount: 15%);
+    }
 }
