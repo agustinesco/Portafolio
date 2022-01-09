@@ -1,0 +1,28 @@
+@use '../globales/variables' as v;
+@use '../globales/mixins' as m;
+
+#tecnologias{
+    margin: 150px 0;
+}
+
+.texto-tecnologias{
+    font-weight: 600;
+    text-align: center;
+}
+
+.iconos-tecnologias{
+    width: 100%;
+    @include m.grid(2);
+    place-items: center;
+    gap: 40px 5px;
+    margin-top: 75px;
+    .icono{
+        height: 100px;
+        width: 100px;
+    }
+
+    @include m.tablet{
+        @include m.grid(4);
+    }
+
+}

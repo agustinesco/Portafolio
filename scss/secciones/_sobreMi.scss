@@ -4,31 +4,28 @@
 
 
 .informacion-sobreMi{
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include m.tablet{
+        flex-direction: row;
+        gap: 40px;
+    }
+
     max-width: 80%;
 }
 
-.animar{
-    .texto-sobreMi{
-        transform: translateX(0%);
-        opacity: 1;
-    }
-    .marco{
-        transform: translateX(0%) rotate(-180deg);
-    }
-}
+
 
 .texto-sobreMi{
-    font-weight: 500;
-    font-size: large;
     transform: translateX(-50%);
+    transition: all v.$tiempo-animacion-sobreMi ease-in;
     opacity: 0;
-
-    transition: transform v.$tiempo-animacion-sobreMi ease-in, opacity v.$tiempo-animacion-sobreMi ease-in;
+    p {
+        font-weight: 500;
+        font-size: 20px;
+    }
 }
-
-
 
 .retrato{
     display: flex;
@@ -55,19 +52,12 @@
 
 }
 
-.texto-tecnologias{
-    font-weight: 600;
-    text-align: center;
-}
-
-.iconos-sobreMi{
-    padding: 50px;
-    width: 100%;
-    @include m.grid(4);
-    gap: 40px 5px;
-    .icono{
-        height: 100px;
-        width: 100px;
+.animar{
+    .texto-sobreMi{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    .marco{
+        transform: translateX(0%) rotate(-180deg);
     }
 }
-
