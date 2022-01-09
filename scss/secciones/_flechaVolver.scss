@@ -1,21 +1,25 @@
 @use '../globales/variables' as v;
-
+@use '../globales/mixins' as m; 
 .flecha-volver{
-    visibility: hidden;
-    position: fixed;
-    width: v.$tamaño-flecha;
-    height: v.$tamaño-flecha;
-    bottom: 10vh;
-    right: 5vw;
-    padding: 40px;
-    background-color:#6b21a8  ;
-    font-size: 50px;
-    border-radius: 50%;
-    color: white;  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &.mostrar-flecha{
+    @include m.tablet{
+        visibility: hidden;
+        position: fixed;
+        bottom: 2vh;
+        right: 2vw;
+        
+        width: v.$tamaño-flecha;
+        height: v.$tamaño-flecha;
+        padding: 30px;
+        font-size: 50px;
+        border-radius: 50%;
+        
+        background-color:#6b21a8  ;
+        color: white;  
+        &.mostrar-flecha{
             visibility: visible;   
+        }
+        &:hover{
+            background-color: darken($color: #6b21a8, $amount: 20%);
+        }
     }
 }
