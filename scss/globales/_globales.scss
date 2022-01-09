@@ -1,7 +1,7 @@
 @use '../globales/variables' as v;
 html{
     scroll-behavior: smooth;
-    scroll-padding-top: 70px;
+    scroll-padding-top: v.$altura-barra-superior;
 }
 
 body{
@@ -9,12 +9,13 @@ body{
 }
 
 section{
-    display: grid;
-    place-items: center;
-    padding: v.$altura-barra-superior 0 0 0;
     background-color: white;
     margin: 100px 0;
+    min-height: 100vh - v.$altura-barra-superior;
     box-shadow: -2px 1px 20px 12px rgba(0,0,0,0.50);
+    &:last-of-type{
+        margin-bottom: 0;
+    }
 }
 
 a{
