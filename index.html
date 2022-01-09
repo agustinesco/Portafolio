@@ -22,7 +22,7 @@
             <a class="boton-nav" href="#informacion">Sobre mi</a>
             <a class="boton-nav" href="#proyectos">Proyectos</a>
             <a class="boton-nav" href="#contacto">Contacto</a>
-            <a href=""></a>
+            <a class="boton-nav" href="#tecnologias">Tecnologias</a>
         </nav>
         <div class="imagen-superior" id="imagen-header">
             <p class="simularEscritura" id="escritura"></p>
@@ -34,14 +34,18 @@
                 <div class="sobreMi contenedor centrado">
                     <h1>Sobre Mi</h1>
                     <div class="informacion-sobreMi centrado">
-                        <p class="texto-sobreMi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aspernatur harum neque? Velit odit delectus rem obcaecati doloremque dolores dicta, ratione culpa rerum praesentium dolor veritatis hic porro maxime officia. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, quibusdam laborum suscipit obcaecati, commodi eius, vero nobis repellendus impedit et placeat nulla maxime explicabo quod temporibus consequatur culpa facilis cum!
-                            Odit nostrum accusamus dolorum harum animi similique iste! Veritatis laborum neque sunt! Accusamus, quas pariatur.</p>
+                        <div class="texto-sobreMi">
+                            <p class="texto-sobreMi">Hola me presento soy Agustín Lautaro Escobar, actualmente tengo 22 años y vivo en Buenos Aires, Argentina.</p>
+                            <p class="texto-sobreMi">Despues de recibirme de la escuela secundaria decidí adentrarme en el mundo de la tecnologia e inicie mi carrera en la programación.</p>
+                            <p>Me encuentro cursando mi tercer año en la <strong>Tecnicatura universitaria en informatica</strong> de la <strong>Universidad Nacional de General Sarmiento</strong> y me gusta obtener otros conocimientos de forma autodidacta o cursos en linea, en la actualidad me encuentro estudiando desarrollo web full stack</p>
+                        </div>
+                        
                             <div class="retrato">
                                 <div class="marco"></div>
                                 <img src="imagenes/agustinesco.png" alt="">
                             </div>
                     </div>
-                    <h2>Tecnologias que conozco</h2>
+                    <h2 id="tecnologias">Tecnologias que conozco</h2>
                     <p class="texto-tecnologias">Estas son algunas tecnologías con las que ya hice algun tipo de trabajo, de ser necesario siempre estoy dispuesto a aprender una nueva </p>
                     <div class="iconos-sobreMi centrado">
                         <img src="imagenes/iconos/php.png" alt="" class="icono">
@@ -103,22 +107,11 @@
                 <p class="formas">Formas de contacto:</p>
                 <div class="iconos">
                     <span class="material-icons-outlined metodo metodo-email">email</span>
-                    <span class="material-icons-outlined metodo metodo-wsp">
-                        whatsapp
-                        </span>
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=+54 11 4188 4296"><span class="material-icons-outlined metodo metodo-wsp">whatsapp</span></a>
                 </div>
 
+               <div class="contenedor-formulario">
                 <form class="formulario" action="">
-                    <div class="campo">
-                        <label>Nombre: </label>
-                        <input 
-                            type="text" 
-                            name="nombre" 
-                            id="nombre"
-                            placeholder="Tu nombre"
-                        />
-                        
-                    </div>
                     <div class="campo">
                         <label>Email: </label>
                         <input 
@@ -129,15 +122,28 @@
                         />
                     </div>
                     <div class="campo">
+                        <label>nombre: </label>
+                        <input 
+                            type="text" 
+                            name="nombre" 
+                            id="nombre"
+                            placeholder="Tu nombre"
+                        />
+                    </div>
+                    
+                    <div class="campo">
                         <label>Mensaje: </label>
                         <textarea 
                             name="mensaje" 
                             id="mensaje" 
                             cols="1" 
-                            rows="10">
-                        </textarea>
+                            rows="10"></textarea>
                     </div>
+                
+                    <input class="boton" type="submit" value="Enviar correo">
                 </form>
+                <a target="_blank" href="mailto:agustinescobar@hotmail.com.ar" id="boton-enviar">mail</a>
+               </div>
             </div>
         </section>
     </main>
