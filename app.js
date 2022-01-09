@@ -9,10 +9,14 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function cargarApp(){
+
     escribirOraciones();
     eventListenerANav();
     agregarFechaFooter();
-    agregarObservadores()
+    agregarObservadores();
+    eventListenersAContacto();
+    envioDeFormulario();
+
 }
 
 function eventListenerANav(){
@@ -113,7 +117,6 @@ function observadorFlechaVolver() {
     let observer = new IntersectionObserver(entries=>{
         entries.forEach(entry=>{
             const flecha = document.querySelector('.flecha-volver');
-            console.log(entry.isIntersecting)
             if(entry.isIntersecting){
                 flecha.classList.remove('mostrar-flecha');
             }else{
@@ -125,4 +128,43 @@ function observadorFlechaVolver() {
 
     const header = document.querySelector('.imagen-superior');
     observer.observe(header);
+}
+
+function eventListenersAContacto(){
+    const formulario = document.querySelector('.formulario');
+    const botonEmail = document.querySelector('.metodo-email');
+    const botonWsp = document.querySelector('.metodo-wsp');
+
+
+
+    botonEmail.addEventListener('click', ()=>{
+        if(formulario.classList.contains('mostrar')){
+            formulario.classList.add('ocultar')
+            setTimeout(() => {
+                formulario.classList.remove('mostrar')
+                formulario.classList.remove('ocultar')
+            }, 1000);
+        } else {
+            formulario.classList.add('mostrar')
+        }
+    });
+
+}
+
+function envioDeFormulario(){
+    const formulario = document.querySelector('.formulario');
+    const botonEnviar = document.querySelector('#boton-enviar')
+
+    formulario.addEventListener('submit', enviarFormulario)
+
+    function enviarFormulario(e) {
+        e.preventDefault();
+
+        const form = new FormData(this);
+        
+        botonEnviar.setAttribute('href', `mailto:agustinescobar@hotmail.com.ar?subject=${form.get('nombre')} ${form.get('email')}&body=${form.get('mensaje')}`);
+        console.log(botonEnviar.getAttribute('href'));
+        botonEnviar.click()
+    }
+
 }
