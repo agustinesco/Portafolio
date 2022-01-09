@@ -21,6 +21,7 @@ function cargarApp(){
 
 function eventListenerANav(){
     const botones = document.querySelectorAll('.boton-nav');
+    const btnMobile = document.querySelector('.boton-mobile')
 
     botones.forEach(boton => {
         boton.addEventListener('click', ()=>{
@@ -29,6 +30,18 @@ function eventListenerANav(){
             boton.classList.add('seleccionado');
         })
     });
+
+    btnMobile.addEventListener('click', ()=>{
+        const botonesNav = document.querySelector('.botones-nav')
+
+        if(botonesNav.classList.contains('mostrar')){
+            botonesNav.classList.remove('mostrar')
+            btnMobile.textContent = "menu"
+        } else {
+            botonesNav.classList.add('mostrar')
+            btnMobile.textContent = "close"
+        }
+    })
 }
 
 async function escribirOraciones(){
@@ -114,13 +127,17 @@ function observadorSobreMi() {
 }
 
 function observadorFlechaVolver() {
+    const logo = document.querySelector('.logo')
     let observer = new IntersectionObserver(entries=>{
         entries.forEach(entry=>{
             const flecha = document.querySelector('.flecha-volver');
             if(entry.isIntersecting){
+                logo.style.color = "#ffffff";
                 flecha.classList.remove('mostrar-flecha');
             }else{
                 flecha.classList.add('mostrar-flecha');
+                console.log(logo.style.color);
+                logo.style.color = "#f59e0b";
             }
         })
 
@@ -146,6 +163,9 @@ function eventListenersAContacto(){
             }, 1000);
         } else {
             formulario.classList.add('mostrar')
+            setTimeout(() => {
+                formulario.scrollIntoView(true, "smooth");
+            }, 300);
         }
     });
 
