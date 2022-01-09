@@ -1,13 +1,15 @@
 @use 'variables' as v;
 
 .centrado{
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .contenedor{
-    width: 95%;
-    min-height: 100vh - v.$altura-barra-superior;
-    margin: 0 auto 50px auto;
+    width: 95vw;
+    min-height: max-content;
+    margin: 0 auto;
     overflow: hidden;
 }
