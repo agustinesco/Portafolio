@@ -19,10 +19,17 @@
 <body>
     <header>
         <nav class="navegacion">
-            <a class="boton-nav" href="#informacion">Sobre mi</a>
-            <a class="boton-nav" href="#proyectos">Proyectos</a>
-            <a class="boton-nav" href="#contacto">Contacto</a>
-            <a class="boton-nav" href="#tecnologias">Tecnologias</a>
+                <a href="#" class="logo">Agustin <span>Escobar</span></a>
+                <div class="botones-nav">
+                    <a class="boton-nav" href="#">inicio</a>
+                    <a class="boton-nav" href="#informacion">Sobre mi</a>
+                    <a class="boton-nav" href="#tecnologias">Tecnologias</a>
+                    <a class="boton-nav" href="#proyectos">Proyectos</a>
+                    <a class="boton-nav" href="#contacto">Contacto</a>
+                </div>
+                <span class="material-icons-outlined boton-mobile">
+                    menu
+                </span>
         </nav>
         <div class="imagen-superior" id="imagen-header">
             <p class="simularEscritura" id="escritura"></p>
@@ -35,27 +42,29 @@
                     <h1>Sobre Mi</h1>
                     <div class="informacion-sobreMi centrado">
                         <div class="texto-sobreMi">
-                            <p class="texto-sobreMi">Hola me presento soy Agustín Lautaro Escobar, actualmente tengo 22 años y vivo en Buenos Aires, Argentina.</p>
-                            <p class="texto-sobreMi">Despues de recibirme de la escuela secundaria decidí adentrarme en el mundo de la tecnologia e inicie mi carrera en la programación.</p>
+                            <p>Hola me presento soy Agustín Lautaro Escobar, actualmente tengo 22 años y vivo en Buenos Aires, Argentina.</p>
+                            <p>Despues de recibirme de la escuela secundaria decidí adentrarme en el mundo de la tecnologia e inicie mi carrera en la programación.</p>
                             <p>Me encuentro cursando mi tercer año en la <strong>Tecnicatura universitaria en informatica</strong> de la <strong>Universidad Nacional de General Sarmiento</strong> y me gusta obtener otros conocimientos de forma autodidacta o cursos en linea, en la actualidad me encuentro estudiando desarrollo web full stack</p>
                         </div>
                         
-                            <div class="retrato">
-                                <div class="marco"></div>
-                                <img src="imagenes/agustinesco.png" alt="">
-                            </div>
+                        <div class="retrato">
+                            <div class="marco"></div>
+                            <img src="imagenes/agustinesco.png" alt="">
+                        </div>
                     </div>
-                    <h2 id="tecnologias">Tecnologias que conozco</h2>
-                    <p class="texto-tecnologias">Estas son algunas tecnologías con las que ya hice algun tipo de trabajo, de ser necesario siempre estoy dispuesto a aprender una nueva </p>
-                    <div class="iconos-sobreMi centrado">
-                        <img src="imagenes/iconos/php.png" alt="" class="icono">
-                        <img src="imagenes/iconos/html-5.png" alt="" class="icono">
-                        <img src="imagenes/iconos/css-3.png" alt="" class="icono">
-                        <img src="imagenes/iconos/js.png" alt="" class="icono">
-                        <img src="imagenes/iconos/java.png" alt="" class="icono">
-                        <img src="imagenes/iconos/sass.png" alt="" class="icono">
-                        <img src="imagenes/iconos/git.png" alt="" class="icono">
-                        <img src="imagenes/iconos/mysql.png" alt="" class="icono">
+                    <div class="tecnologias" id="tecnologias">
+                        <h2>Tecnologias que conozco</h2>
+                        <p class="texto-tecnologias">Estas son algunas tecnologías con las que ya hice algun tipo de trabajo, de ser necesario siempre estoy dispuesto a aprender una nueva </p>
+                        <div class="iconos-tecnologias">
+                            <img src="imagenes/iconos/php.png" alt="" class="icono">
+                            <img src="imagenes/iconos/html-5.png" alt="" class="icono">
+                            <img src="imagenes/iconos/css-3.png" alt="" class="icono">
+                            <img src="imagenes/iconos/js.png" alt="" class="icono">
+                            <img src="imagenes/iconos/java.png" alt="" class="icono">
+                            <img src="imagenes/iconos/sass.png" alt="" class="icono">
+                            <img src="imagenes/iconos/git.png" alt="" class="icono">
+                            <img src="imagenes/iconos/mysql.png" alt="" class="icono">
+                        </div>
                     </div>
                 </div>
         </section>
@@ -106,12 +115,12 @@
 
                 <p class="formas">Formas de contacto:</p>
                 <div class="iconos">
-                    <span class="material-icons-outlined metodo metodo-email">email</span>
+                    <a class="metodo-email"><span class="material-icons-outlined metodo">email</span></a>
                     <a target="_blank" href="https://api.whatsapp.com/send?phone=+54 11 4188 4296"><span class="material-icons-outlined metodo metodo-wsp">whatsapp</span></a>
                 </div>
 
                <div class="contenedor-formulario">
-                <form class="formulario" action="">
+                <form class="formulario" action="" id="formulario">
                     <div class="campo">
                         <label>Email: </label>
                         <input 
@@ -149,7 +158,7 @@
     </main>
 
     <aside class="volver ">
-        <a class="flecha-volver " href="#imagen-header">
+        <a class="flecha-volver centrado" href="#imagen-header">
             <img src="imagenes/iconos/linea arriba.png" alt="">
         </a>
     </aside>
