@@ -1,0 +1,102 @@
+@use '../globales/variables' as v;
+@use '../globales/mixins' as m;
+
+.navegacion{
+    min-width: 100vw;
+    background-color: lighten($color: #000000, $amount: 15%) ;
+    height: v.$altura-barra-superior;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    position: fixed;
+}
+
+
+.boton-mobile{
+    padding: 20px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    @include m.tablet{
+        display: none;
+    }
+}
+
+.botones-nav{
+    display: none;
+
+    &.mostrar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        top: v.$altura-barra-superior;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        height: 100vh;
+
+        background-color: rgb(0 0 0 / 90%);
+    }
+
+    @include m.tablet{
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+}
+.boton-nav{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 900; 
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+
+    padding: 20px 0;
+    width: 100%;
+    margin-bottom: 20px;
+    
+    transition: all .2s ease-out;
+
+    &.seleccionado{
+        background-color: v.$naranja;
+    }
+
+    @include m.tablet{
+        font-size: 15px;
+        width: fit-content;
+        margin-bottom: 0;
+        margin-right: 10px;
+        padding: 10px 10px;
+        &:last-of-type{
+            margin-right: 20px;
+        }
+        &.seleccionado{
+            background-color: transparent;
+            border-bottom:5px solid v.$naranja;
+        }
+    }
+
+    
+    
+}
+
+.logo{
+    text-decoration: none;
+    padding: 20px;
+    font-size: 30px;
+    color: white;
+    font-weight: 900;
+    text-transform: uppercase;
+    & span{
+        color:v.$violeta;
+    }
+}
