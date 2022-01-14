@@ -1,8 +1,11 @@
 @use '../globales/variables' as v;
 @use '../globales/mixins' as m;
 
-#tecnologias{
-    margin: 150px 0;
+.tecnologias{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
 }
 
 .texto-tecnologias{

@@ -1,18 +1,22 @@
 @use '../globales/variables' as v;
 @use '../globales/mixins' as m;
 
-
+.sobreMi{
+    overflow: hidden;
+    justify-content: center;
+    padding: 0;
+}
 
 .informacion-sobreMi{
     display: flex;
     flex-direction: column-reverse;
+    max-width: 80%;
 
     @include m.tablet{
         flex-direction: row;
         gap: 40px;
     }
 
-    max-width: 80%;
 }
 
 
@@ -23,7 +27,7 @@
     opacity: 0;
     p {
         font-weight: 500;
-        font-size: 20px;
+        font-size: 25px;
     }
 }
 

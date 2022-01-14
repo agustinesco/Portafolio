@@ -5,11 +5,13 @@
 
 
 .proyectos{
-    padding: 70px;
     margin: 0;
     @include m.tablet{
+        padding: 20px;
+        width: 80%;
+        max-width: 1000px;
         @include m.grid(3);
-        gap: 3% 2%;
+        gap: 30px 20px;
     }
 }
 .proyecto{
@@ -39,8 +41,7 @@
         margin-bottom: 0;
         transition: transform .7s ease-in-out;
         height: 400px;
-        width: fit-content;
-
+        max-width: 400px;
         & img{
             filter: blur(2px);
             height: 150px;

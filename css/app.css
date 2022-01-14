@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 10vh;
+  scroll-padding-top: 7vh;
 }
 
 body {
@@ -10,8 +10,14 @@ body {
 section {
   background-color: white;
   margin: 100px 0;
-  min-height: 90vh;
+  min-height: 93vh;
   box-shadow: -2px 1px 20px 12px rgba(0, 0, 0, 0.5);
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
 }
 section:last-of-type {
   margin-bottom: 0;
@@ -381,7 +387,7 @@ template {
 
 h1, h2, h3, h4 {
   text-align: center;
-  margin-top: 30px;
+  margin: 0;
 }
 h1 ::after, h2 ::after, h3 ::after, h4 ::after {
   content: "";
@@ -391,19 +397,15 @@ h1 ::after, h2 ::after, h3 ::after, h4 ::after {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 h2 {
-  font-size: 25px;
-}
-
-h3 {
-  font-size: 20px;
+  font-size: 35px;
 }
 
 p {
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
   font-weight: 500;
 }
@@ -426,7 +428,7 @@ p {
 .navegacion {
   min-width: 100vw;
   background-color: #262626;
-  height: 10vh;
+  height: 7vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -456,7 +458,7 @@ p {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 10vh;
+  top: 7vh;
   bottom: 0;
   right: 0;
   left: 0;
@@ -546,6 +548,12 @@ p {
   color: black;
 }
 
+.sobreMi {
+  overflow: hidden;
+  justify-content: center;
+  padding: 0;
+}
+
 .informacion-sobreMi {
   display: flex;
   flex-direction: column-reverse;
@@ -565,7 +573,7 @@ p {
 }
 .texto-sobreMi p {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .retrato {
@@ -599,8 +607,11 @@ p {
   transform: translateX(0%) rotate(-180deg);
 }
 
-#tecnologias {
-  margin: 150px 0;
+.tecnologias {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
 }
 
 .texto-tecnologias {
@@ -630,15 +641,17 @@ p {
 }
 
 .proyectos {
-  padding: 70px;
   margin: 0;
 }
 @media (min-width: 768px) {
   .proyectos {
+    padding: 20px;
+    width: 80%;
+    max-width: 1000px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    gap: 3% 2%;
+    gap: 30px 20px;
   }
 }
 
@@ -669,7 +682,7 @@ p {
     margin-bottom: 0;
     transition: transform 0.7s ease-in-out;
     height: 400px;
-    width: fit-content;
+    max-width: 400px;
   }
   .proyecto img {
     filter: blur(2px);
@@ -822,7 +835,7 @@ p {
 
 .footer {
   padding: 10px 0;
-  background-color: blueviolet;
+  background-color: rgba(0, 0, 0, 0.9);
   font-size: 15px;
   color: white;
 }

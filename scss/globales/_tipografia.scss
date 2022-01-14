@@ -4,7 +4,7 @@
 
 h1,h2,h3,h4{
     text-align: center;
-    margin-top: 30px;
+    margin: 0;
     & ::after{
         content: "";
         width: inherit;
@@ -14,16 +14,14 @@ h1,h2,h3,h4{
 }
 
 h1{
-    font-size: 30px;
+    font-size: 40px;
 }
 h2{
-    font-size: 25px;
+    font-size: 35px;
 }
-h3{
-    font-size: 20px;
-}
+
 p{
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
     font-weight: 500;
 }
