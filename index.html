@@ -18,10 +18,10 @@
 </head>
 <body>
     <header>
-        <nav class="navegacion">
-                <a href="#" class="logo">Agustin <span>Escobar</span></a>
+            <nav class="navegacion">
+                <a href="#imagen-header" class="logo">Agustin <span>Escobar</span></a>
                 <div class="botones-nav">
-                    <a class="boton-nav" href="#">inicio</a>
+                    <a class="boton-nav" href="#imagen-header">inicio</a>
                     <a class="boton-nav" href="#informacion">Sobre mi</a>
                     <a class="boton-nav" href="#tecnologias">Tecnologias</a>
                     <a class="boton-nav" href="#proyectos">Proyectos</a>
@@ -30,135 +30,141 @@
                 <span class="material-icons-outlined boton-mobile">
                     menu
                 </span>
-        </nav>
+            </nav>
+    </header>
+    <main>
         <div class="imagen-superior" id="imagen-header">
             <p class="simularEscritura" id="escritura"></p>
             <p class="nombre">Hola soy Agustin Escobar</p>
         </div>
-    </header>
-    <main>
         <section class="sobreMi " id="informacion">
-          
-                    <h2>Sobre Mi</h2>
-                    <div class="informacion-sobreMi centrado">
-                        <div class="texto-sobreMi">
-                            <p>Hola me presento soy Agustín Lautaro Escobar, actualmente tengo 22 años y vivo en Buenos Aires, Argentina.</p>
-                            <p>Despues de recibirme de la escuela secundaria decidí adentrarme en el mundo de la tecnologia e inicie mi carrera en la programación.</p>
-                            <p>Me encuentro cursando mi tercer año en la <strong>Tecnicatura universitaria en informatica</strong> de la <strong>Universidad Nacional de General Sarmiento</strong> y me gusta obtener otros conocimientos de forma autodidacta o cursos en linea, en la actualidad me encuentro estudiando desarrollo web full stack</p>
-                        </div>
-                        
-                        <div class="retrato">
-                            <div class="marco"></div>
-                            <img src="imagenes/agustinesco.png" alt="">
+                    <div class="contenedor">
+                        <h2>Sobre Mi</h2>
+                        <div class="informacion-sobreMi centrado">
+                            <div class="texto-sobreMi">
+                                <p>Hola me presento soy Agustín Lautaro Escobar, actualmente tengo 22 años y vivo en Buenos Aires, Argentina.</p>
+                                <p>Despues de recibirme de la escuela secundaria decidí adentrarme en el mundo de la tecnologia e inicie mi carrera en la programación.</p>
+                                <p>Me encuentro cursando mi tercer año en la <strong>Tecnicatura universitaria en informatica</strong> de la <strong>Universidad Nacional de General Sarmiento</strong> y me gusta obtener otros conocimientos de forma autodidacta o cursos en linea, en la actualidad me encuentro estudiando desarrollo web full stack</p>
+                            </div>
+                            
+                            <div class="retrato">
+                                <div class="marco"></div>
+                                <img src="imagenes/agustinesco.png" alt="">
+                            </div>
                         </div>
                     </div>
-                   
-           
         </section>
         <section class="tecnologias" id="tecnologias">
-                <h2>Tecnologias que conozco</h2>
-                <p class="texto-tecnologias">Estas son algunas tecnologías con las que ya hice algun tipo de trabajo, de ser necesario siempre estoy dispuesto a aprender una nueva </p>
-                <div class="iconos-tecnologias">
-                    <img src="imagenes/iconos/php.png" alt="" class="icono">
-                    <img src="imagenes/iconos/html-5.png" alt="" class="icono">
-                    <img src="imagenes/iconos/css-3.png" alt="" class="icono">
-                    <img src="imagenes/iconos/js.png" alt="" class="icono">
-                    <img src="imagenes/iconos/java.png" alt="" class="icono">
-                    <img src="imagenes/iconos/sass.png" alt="" class="icono">
-                    <img src="imagenes/iconos/git.png" alt="" class="icono">
-                    <img src="imagenes/iconos/mysql.png" alt="" class="icono">
+                <div class="contenedor">
+                    <h2>Tecnologias que conozco</h2>
+                    <p class="texto-tecnologias">Estas son algunas tecnologías con las que ya hice algun tipo de trabajo, de ser necesario siempre estoy dispuesto a aprender una nueva </p>
+                    <div class="iconos-tecnologias">
+                        <img src="imagenes/iconos/php.png" alt="" class="icono">
+                        <img src="imagenes/iconos/html-5.png" alt="" class="icono">
+                        <img src="imagenes/iconos/css-3.png" alt="" class="icono">
+                        <img src="imagenes/iconos/js.png" alt="" class="icono">
+                        <img src="imagenes/iconos/java.png" alt="" class="icono">
+                        <img src="imagenes/iconos/sass.png" alt="" class="icono">
+                        <img src="imagenes/iconos/git.png" alt="" class="icono">
+                        <img src="imagenes/iconos/mysql.png" alt="" class="icono">
+                    </div>
                 </div>
         </section>
     
         <section id="proyectos">
-                    <h2>Mis proyectos</h2>
-                    <ul class="proyectos">
-                        <li class="proyecto">
-                            <div class="contenido">
-                                <h3>Calculadora simple</h3>
-                                <img src="imagenes/calculadora.png" alt="">
-                                <p>Calculadora relizada para reforzar la logica con javascript y uso de selectores</p>
-                            </div>
-                            <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/calculadora-simple/">Visitar Proyecto</a>      
-                        </li>
-                        <li class="proyecto">
-                            <div class="contenido">
-                                <h3>Snake</h3>
-                                <img src="imagenes/snake.png" alt="">
-                                <p>Juego snake realizado para reforzar javascript y el uso de eventListeners</p>
-                            </div>
-                            <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/snake/">Visitar Proyecto</a>   
-                        </li>
-                        <li class="proyecto">
-                            <div class="contenido">
-                                <h3>App Salon</h3>
-                                <img src="imagenes/appSalon.png" alt="Imagen sobre el proyecto de una app de salon">
-                                <p>Aplicacion de salon de belleza realizada como parte de un curso full Stack , version con mas funcionalidad en Repositorio</p>
-                            </div>
-                            <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/App-Salon/">Visitar Proyecto</a>
-                        </li>
-                        <li class="proyecto">
-                            <div class="contenido">
-                                <h3>Rock y EDM Festival</h3>
-                                <img src="imagenes/rock festival.png" alt="Rock y EDM festival imagen thumbnail">
-                                <p>Pagina web para un concierto de rock y edm como practica de diseño basico de paginas</p>
-                            </div>
-                            <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/Festival-de-musica/">Visitar Proyecto</a>
-                        </li>
-                    </ul>
+                    <div class="contenedor">
+                        <h2>Mis proyectos</h2>
+                        <ul class="proyectos">
+                            <li class="proyecto">
+                                <div class="contenido">
+                                    <h3>Calculadora simple</h3>
+                                    <img src="imagenes/calculadora.png" alt="">
+                                    <p>Calculadora relizada para reforzar la logica con javascript y uso de selectores</p>
+                                </div>
+                                <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/calculadora-simple/">Visitar Proyecto</a>      
+                            </li>
+                            <li class="proyecto">
+                                <div class="contenido">
+                                    <h3>Snake</h3>
+                                    <img src="imagenes/snake.png" alt="">
+                                    <p>Juego snake realizado para reforzar javascript y el uso de eventListeners</p>
+                                </div>
+                                <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/snake/">Visitar Proyecto</a>   
+                            </li>
+                            <li class="proyecto">
+                                <div class="contenido">
+                                    <h3>App Salon</h3>
+                                    <img src="imagenes/appSalon.png" alt="Imagen sobre el proyecto de una app de salon">
+                                    <p>Aplicacion de salon de belleza realizada como parte de un curso full Stack , version con mas funcionalidad en Repositorio</p>
+                                </div>
+                                <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/App-Salon/">Visitar Proyecto</a>
+                            </li>
+                            <li class="proyecto">
+                                <div class="contenido">
+                                    <h3>Rock y EDM Festival</h3>
+                                    <img src="imagenes/rock festival.png" alt="Rock y EDM festival imagen thumbnail">
+                                    <p>Pagina web para un concierto de rock y edm como practica de diseño basico de paginas</p>
+                                </div>
+                                <a target="_blank" class="boton-proyecto" href="https://agustinesco.github.io/Festival-de-musica/">Visitar Proyecto</a>
+                            </li>
+                        </ul>
+                    </div>
         </section>
-        <section id="contacto">
-            <div class="contenedor contactame">
-                <h1>Contactame</h1>
-                <p>¿Estas interesado en mis proyectos y me quieres para algun trabajo? No dudes en contactarme</p>
+        <section class="contactame" id="contacto">
+               <div class="contenedor">
+                    <h1>Contactame</h1>
+                    <p>¿Estas interesado en mis proyectos y me quieres para algun trabajo? No dudes en contactarme</p>
 
-                <p class="formas">Formas de contacto:</p>
-                <div class="iconos">
-                    <a class="metodo-email"><span class="material-icons-outlined metodo">email</span></a>
-                    <a target="_blank" href="https://api.whatsapp.com/send?phone=+54 11 4188 4296"><span class="material-icons-outlined metodo metodo-wsp">whatsapp</span></a>
-                </div>
+                    <p class="formas">Formas de contacto:</p>
+                    <div class="iconos">
+                        <a class="metodo-email"><span class="material-icons-outlined metodo">email</span></a>
+                        <a target="_blank" href="https://api.whatsapp.com/send?phone=+54 11 4188 4296"><span class="material-icons-outlined metodo metodo-wsp">whatsapp</span></a>
+                    </div>
 
-               <div class="contenedor-formulario">
-                <form 
-                    class="formulario" 
-                    action="https://formspree.io/f/xpzbwegn" 
-                    id="formulario"
-                    method="POST"
-                >
-                    <div class="campo">
-                        <label for="email">Email: </label>
-                        <input 
-                            type="email" 
-                            name="_replyto" 
-                            id="email"
-                            placeholder="Tu email"
-                        />
+                    <div class="contenedor-formulario">
+                        <form 
+                            class="formulario" 
+                            action="https://formspree.io/f/xpzbwegn" 
+                            id="formulario"
+                            method="POST"
+                        >
+                            <div class="campo">
+                                <label for="email">Email: </label>
+                                <input 
+                                    type="email" 
+                                    name="_replyto" 
+                                    id="email"
+                                    placeholder="Tu email"
+                                />
+                            </div>
+                            <div class="campo">
+                                <label for="nombre">nombre: </label>
+                                <input 
+                                    type="text" 
+                                    name="nombre" 
+                                    id="nombre"
+                                    placeholder="Tu nombre"
+                                />
+                            </div>
+                            
+                            <div class="campo">
+                                <label for="mensaje">Mensaje: </label>
+                                <textarea 
+                                    name="message" 
+                                    id="mensaje" 
+                                    cols="1" 
+                                    rows="10"></textarea>
+                            </div>
+                        
+                            <input class="boton" type="submit" value="Enviar correo">
+                        </form>
+                        <a target="_blank" id="boton-enviar">mail</a>
                     </div>
-                    <div class="campo">
-                        <label for="nombre">nombre: </label>
-                        <input 
-                            type="text" 
-                            name="nombre" 
-                            id="nombre"
-                            placeholder="Tu nombre"
-                        />
-                    </div>
-                    
-                    <div class="campo">
-                        <label for="mensaje">Mensaje: </label>
-                        <textarea 
-                            name="message" 
-                            id="mensaje" 
-                            cols="1" 
-                            rows="10"></textarea>
-                    </div>
-                
-                    <input class="boton" type="submit" value="Enviar correo">
-                </form>
-                <a target="_blank" id="boton-enviar">mail</a>
                </div>
-            </div>
         </section>
+        <footer class="footer">
+            <h3 class="footer-texto">Pagina desarrollada por Agustin Lautaro Escobar - &#169 </h3>
+        </footer>
     </main>
 
     <aside class="volver ">
@@ -166,10 +172,6 @@
             <img src="imagenes/iconos/linea arriba.png" alt="">
         </a>
     </aside>
-
-    <footer class="footer">
-        <h3 class="footer-texto">Pagina desarrollada por Agustin Lautaro Escobar - &#169 </h3>
-    </footer>
 
 </body>
 

@@ -1,23 +1,22 @@
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 7vh;
-}
-
+/** Media Queries **/
 body {
   background-color: #c084fc;
+}
+
+main {
+  height: 90vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
 }
 
 section {
   background-color: white;
   margin: 100px 0;
-  min-height: 93vh;
   box-shadow: -2px 1px 20px 12px rgba(0, 0, 0, 0.5);
-  padding: 20px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 40px;
+  overflow: hidden;
+  min-height: 100%;
 }
 section:last-of-type {
   margin-bottom: 0;
@@ -418,22 +417,27 @@ p {
 }
 
 .contenedor {
-  width: 95vw;
-  min-height: max-content;
+  padding: 20px 0;
   margin: 0 auto;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 100%;
+  max-width: 95%;
 }
 
-/** Media Queries **/
-.navegacion {
-  min-width: 100vw;
+header {
   background-color: #262626;
-  height: 7vh;
+}
+
+.navegacion {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
-  position: fixed;
+  height: 10vh;
+  margin: 0 30px;
 }
 
 .boton-mobile {
@@ -455,14 +459,14 @@ p {
 .botones-nav.mostrar {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  z-index: 100;
   position: absolute;
-  top: 7vh;
+  top: 10vh;
   bottom: 0;
   right: 0;
   left: 0;
-  height: 100vh;
+  height: 90vh;
   background-color: rgba(0, 0, 0, 0.9);
 }
 @media (min-width: 768px) {
@@ -495,11 +499,7 @@ p {
     font-size: 15px;
     width: fit-content;
     margin-bottom: 0;
-    margin-right: 10px;
     padding: 10px 10px;
-  }
-  .boton-nav:last-of-type {
-    margin-right: 20px;
   }
   .boton-nav.seleccionado {
     background-color: transparent;
@@ -509,21 +509,24 @@ p {
 
 .logo {
   text-decoration: none;
-  padding: 20px;
-  font-size: 30px;
   color: white;
   font-weight: 900;
+  font-size: 20px;
   text-transform: uppercase;
 }
 .logo span {
   color: #9900cc;
 }
+@media (min-width: 768px) {
+  .logo {
+    font-size: 30px;
+  }
+}
 
 .imagen-superior {
   position: relative;
-  width: 100%;
   background: linear-gradient(to bottom right, #9900cc 0%, #ff99cc 100%);
-  height: 100vh;
+  height: 100%;
   box-shadow: -2px 1px 20px 12px rgba(0, 0, 0, 0.5);
 }
 
@@ -550,8 +553,11 @@ p {
 
 .sobreMi {
   overflow: hidden;
-  justify-content: center;
-  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.sobreMi .contenedor {
+  justify-content: space-between;
 }
 
 .informacion-sobreMi {
@@ -577,6 +583,7 @@ p {
 }
 
 .retrato {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -594,7 +601,7 @@ p {
   height: 275px;
   width: 275px;
   z-index: 0;
-  background-color: #a5b4fc;
+  background-color: #a855f7;
   transform: translateX(400%);
   transition: transform 1.3s ease-in;
 }
@@ -605,13 +612,6 @@ p {
 }
 .animar .marco {
   transform: translateX(0%) rotate(-180deg);
-}
-
-.tecnologias {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 40px;
 }
 
 .texto-tecnologias {

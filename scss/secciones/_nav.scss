@@ -1,15 +1,17 @@
 @use '../globales/variables' as v;
 @use '../globales/mixins' as m;
 
-.navegacion{
-    min-width: 100vw;
+
+header{
     background-color: lighten($color: #000000, $amount: 15%) ;
-    height: v.$altura-barra-superior;
+}
+.navegacion{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
-    position: fixed;
+    height: v.$altura-barra-superior;
+    margin: 0 30px;
+    
 }
 
 
@@ -30,8 +32,9 @@
     &.mostrar{
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
+
+        z-index: 100;
 
         position: absolute;
         top: v.$altura-barra-superior;
@@ -39,7 +42,7 @@
         right: 0;
         left: 0;
 
-        height: 100vh;
+        height: 100vh - v.$altura-barra-superior;
 
         background-color: rgb(0 0 0 / 90%);
     }
@@ -74,11 +77,8 @@
         font-size: 15px;
         width: fit-content;
         margin-bottom: 0;
-        margin-right: 10px;
         padding: 10px 10px;
-        &:last-of-type{
-            margin-right: 20px;
-        }
+
         &.seleccionado{
             background-color: transparent;
             border-bottom:5px solid v.$naranja;
@@ -91,12 +91,14 @@
 
 .logo{
     text-decoration: none;
-    padding: 20px;
-    font-size: 30px;
     color: white;
     font-weight: 900;
+    font-size:20px;
     text-transform: uppercase;
     & span{
         color:v.$violeta;
+    }
+    @include m.tablet{
+        font-size: 30px;
     }
 }

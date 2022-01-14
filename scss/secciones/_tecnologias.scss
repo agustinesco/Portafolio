@@ -1,12 +1,7 @@
 @use '../globales/variables' as v;
 @use '../globales/mixins' as m;
 
-.tecnologias{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 40px;
-}
+
 
 .texto-tecnologias{
     font-weight: 600;

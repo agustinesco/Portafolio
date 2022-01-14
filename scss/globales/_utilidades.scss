@@ -6,10 +6,14 @@
     align-items: center;
     flex-direction: column;
 }
-
 .contenedor{
-    width: 95vw;
-    min-height: max-content;
+    padding: 20px 0;
     margin: 0 auto;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    height: 100%;
+    max-width: 95%;
 }
