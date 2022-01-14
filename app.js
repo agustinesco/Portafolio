@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function(){
     
 });
 
+
+
+
 function cargarApp(){
 
     escribirOraciones();
@@ -15,7 +18,7 @@ function cargarApp(){
     agregarFechaFooter();
     agregarObservadores();
     eventListenersAContacto();
-    envioDeFormulario();
+    //envioDeFormulario();
 
 }
 
@@ -24,7 +27,8 @@ function eventListenerANav(){
     const btnMobile = document.querySelector('.boton-mobile')
 
     botones.forEach(boton => {
-        boton.addEventListener('click', ()=>{
+            boton.addEventListener('click', (e)=>{
+            console.log(e.target.classList);
             const botonSeleccionado = document.querySelector('.boton-nav.seleccionado');
             if(botonSeleccionado) botonSeleccionado.classList.remove('seleccionado');
             boton.classList.add('seleccionado');

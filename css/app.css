@@ -383,6 +383,12 @@ h1, h2, h3, h4 {
   text-align: center;
   margin-top: 30px;
 }
+h1 ::after, h2 ::after, h3 ::after, h4 ::after {
+  content: "";
+  width: inherit;
+  background-color: red;
+  height: 20px;
+}
 
 h1 {
   font-size: 30px;
@@ -743,6 +749,7 @@ p {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  align-items: center;
 }
 .formulario .campo label {
   flex: 1 0 20px;
@@ -757,6 +764,9 @@ p {
 }
 .formulario .campo textarea {
   resize: none;
+}
+.formulario .campo:last-of-type {
+  align-items: flex-start;
 }
 
 .contactame .iconos {

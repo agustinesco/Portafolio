@@ -5,6 +5,12 @@
 h1,h2,h3,h4{
     text-align: center;
     margin-top: 30px;
+    & ::after{
+        content: "";
+        width: inherit;
+        background-color: red;
+        height: 20px;
+    }
 }
 
 h1{
