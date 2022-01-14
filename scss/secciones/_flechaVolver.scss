@@ -1,7 +1,9 @@
 @use '../globales/variables' as v;
 @use '../globales/mixins' as m; 
 .flecha-volver{
+    display: none;
     @include m.tablet{
+        display: flex;
         visibility: hidden;
         position: fixed;
         bottom: 2vh;
