@@ -1,5 +1,5 @@
-[
-    "Los ordenadores son inútiles. Sólo pueden darte respuestas",
+{
+    "oraciones": [
     "Es genial trabajar con ordenadores. No discuten, lo recuerdan todo y no se beben tu cerveza",
     "Los ordenadores son como los bikinis. Ahorran a la gente el hacer muchas conjeturas",
     "Nunca confíes en un ordenador que no puedas lanzar por una ventana",
@@ -11,4 +11,5 @@
     "Sólo hay dos industrias que se refieren a sus clientes como 'usuarios'",
     "No te preocupes si no funciona bien. Si todo estuviera correcto, serías despedido de tu trabajo",
     "No te preocupes si no funciona bien. Si todo estuviera correcto, serías despedido de tu trabajo"
-]
+    ]
+}

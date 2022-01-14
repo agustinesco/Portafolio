@@ -18,25 +18,29 @@ function cargarApp(){
     agregarFechaFooter();
     agregarObservadores();
     eventListenersAContacto();
-    //envioDeFormulario();
 
 }
 
 function eventListenerANav(){
     const botones = document.querySelectorAll('.boton-nav');
     const btnMobile = document.querySelector('.boton-mobile')
+    const botonesNav = document.querySelector('.botones-nav')
 
     botones.forEach(boton => {
             boton.addEventListener('click', (e)=>{
-            console.log(e.target.classList);
             const botonSeleccionado = document.querySelector('.boton-nav.seleccionado');
             if(botonSeleccionado) botonSeleccionado.classList.remove('seleccionado');
             boton.classList.add('seleccionado');
+            if(botonesNav.classList.contains('mostrar')){
+                setTimeout(() => {
+                    botonesNav.classList.remove('mostrar')
+                    btnMobile.textContent = "menu"
+                }, 700);
+            }
         })
     });
 
     btnMobile.addEventListener('click', ()=>{
-        const botonesNav = document.querySelector('.botones-nav')
 
         if(botonesNav.classList.contains('mostrar')){
             botonesNav.classList.remove('mostrar')
@@ -50,11 +54,11 @@ function eventListenerANav(){
 
 async function escribirOraciones(){
     try{
-        const url ="oraciones.json"
+        const url ="datos.json"
         const resultado = await fetch(url)
         .then(respuesta => respuesta.json())
         
-        escribir(resultado,0,0)
+        escribir(resultado.oraciones,0,0)
         
     }
     catch(error){
@@ -63,7 +67,7 @@ async function escribirOraciones(){
     function escribir(oraciones , i, numeroOracion) {
         //escribir la palabra
         if(i<oraciones[numeroOracion].length){
-            parrafo.innerHTML=parrafo.innerHTML.substring(0,i) + oraciones[numeroOracion].charAt(i) +"|";
+            parrafo.textContent=parrafo.textContent.substring(0,i) + oraciones[numeroOracion].charAt(i) +"|";
             i++;
             setTimeout(() => {
                 escribir(oraciones, i ,numeroOracion);
@@ -86,7 +90,7 @@ async function escribirOraciones(){
     }
     function borrar(oraciones,i,numeroOracion){
         if(parrafo.innerHTML.length>0){
-            parrafo.innerHTML=parrafo.innerHTML.substring(0,parrafo.innerHTML.length-1);
+            parrafo.textContent=parrafo.textContent.substring(0,parrafo.textContent.length-1);
     
             setTimeout(() => {
                     borrar(oraciones,i,numeroOracion);
@@ -123,7 +127,7 @@ function observadorSobreMi() {
             })
     
         },{
-            threshold:0.75
+            threshold:0.50
         });
     
         const sobreMi =document.querySelector('.informacion-sobreMi');
@@ -172,23 +176,5 @@ function eventListenersAContacto(){
             }, 300);
         }
     });
-
-}
-
-function envioDeFormulario(){
-    const formulario = document.querySelector('.formulario');
-    const botonEnviar = document.querySelector('#boton-enviar')
-
-    formulario.addEventListener('submit', enviarFormulario)
-
-    function enviarFormulario(e) {
-        e.preventDefault();
-
-        const form = new FormData(this);
-        
-        botonEnviar.setAttribute('href', `mailto:agustinescobar@hotmail.com.ar?subject=${form.get('nombre')} ${form.get('email')}&body=${form.get('mensaje')}`);
-        console.log(botonEnviar.getAttribute('href'));
-        botonEnviar.click()
-    }
 
 }
