@@ -440,6 +440,43 @@ header {
   margin: 0 30px;
 }
 
+.logo {
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.logo span {
+  color: #9900cc;
+}
+@media (min-width: 768px) {
+  .logo {
+    font-size: 30px;
+  }
+}
+
+.contenedor-botones {
+  height: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.cv {
+  align-self: center;
+  margin-right: 1rem;
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .cv {
+    margin-bottom: 0;
+  }
+}
+.cv .boton {
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+
 .boton-mobile {
   padding: 20px;
   font-size: 40px;
@@ -504,22 +541,6 @@ header {
   .boton-nav.seleccionado {
     background-color: transparent;
     border-bottom: 5px solid #f59e0b;
-  }
-}
-
-.logo {
-  text-decoration: none;
-  color: white;
-  font-weight: 900;
-  font-size: 20px;
-  text-transform: uppercase;
-}
-.logo span {
-  color: #9900cc;
-}
-@media (min-width: 768px) {
-  .logo {
-    font-size: 30px;
   }
 }
 
@@ -615,8 +636,9 @@ header {
 }
 
 .texto-tecnologias {
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
+  font-size: 1.5rem;
 }
 
 .iconos-tecnologias {
@@ -736,50 +758,46 @@ header {
 }
 
 .formulario {
-  min-width: 500px;
+  min-width: 80vw;
   border-radius: 20px;
-  background-color: #67e8f9;
-  border: 3px solid black;
-  padding: 0;
-  height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(-100%);
-  transition: transform 1s ease-out;
-}
-.formulario.mostrar {
+  background-color: #cbd5e1;
   padding: 40px;
-  height: max-content;
-  opacity: 1;
-  margin: 50px 0;
-  height: max-content;
-  transform: translateY(0);
-}
-.formulario.ocultar {
-  transform: translateY(-150%);
-}
-.formulario .campo {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
-.formulario .campo label {
-  flex: 1 0 20px;
-  font-weight: 700;
+.formulario .boton-formulario {
+  width: 100%;
   font-size: 20px;
 }
-.formulario .campo input, .formulario .campo textarea {
+@media (min-width: 768px) {
+  .formulario {
+    min-width: 50vw;
+  }
+}
+
+.campo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.campo input, .campo textarea {
+  width: 100%;
   border-style: none;
-  flex: 4;
-  padding: 10px;
   border-radius: 10px;
+  font-size: 20px;
+  padding: 10px;
 }
-.formulario .campo textarea {
+.campo textarea {
   resize: none;
+  height: 150px;
 }
-.formulario .campo:last-of-type {
-  align-items: flex-start;
+.campo label {
+  align-self: flex-start;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .contactame .iconos {
@@ -788,15 +806,28 @@ header {
   display: flex;
   justify-content: space-evenly;
 }
-.contactame .iconos .metodo {
+
+.metodo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #f7b13c;
   padding: 20px;
-  border-radius: 20%;
+  border-radius: 50%;
   font-size: 84px;
   cursor: pointer;
   text-decoration: none;
   color: black;
   user-select: none;
+  transition: all 0.3s ease-in;
+}
+.metodo:hover {
+  border-radius: 15%;
+  background-color: #f59e0b;
+}
+.metodo img {
+  width: 84px;
+  height: 84px;
 }
 
 .formas {
