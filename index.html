@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
     
-    
     <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/x-icon">
     <title>Portafolio</title>
 </head>
@@ -20,12 +19,15 @@
     <header>
             <nav class="navegacion">
                 <a href="#imagen-header" class="logo">Agustin <span>Escobar</span></a>
-                <div class="botones-nav">
-                    <a class="boton-nav" href="#imagen-header">inicio</a>
-                    <a class="boton-nav" href="#informacion">Sobre mi</a>
-                    <a class="boton-nav" href="#tecnologias">Tecnologias</a>
-                    <a class="boton-nav" href="#proyectos">Proyectos</a>
-                    <a class="boton-nav" href="#contacto">Contacto</a>
+                <div class="contenedor-botones">
+                    <div class="botones-nav">
+                        <a class="cv " href="/archivos/CV_Agustin-Escobar.pdf" download="CV Agustin Escobar"><button class="boton">Descargar cv</button></a>
+                        <a class="boton-nav" href="#imagen-header">inicio</a>
+                        <a class="boton-nav" href="#informacion">Sobre mi</a>
+                        <a class="boton-nav" href="#tecnologias">Tecnologias</a>
+                        <a class="boton-nav" href="#proyectos">Proyectos</a>
+                        <a class="boton-nav" href="#contacto">Contacto</a>
+                    </div>
                 </div>
                 <span class="material-icons-outlined boton-mobile">
                     menu
@@ -117,7 +119,7 @@
 
                     <p class="formas">Formas de contacto:</p>
                     <div class="iconos">
-                        <a class="metodo-email"><span class="material-icons-outlined metodo">email</span></a>
+                        <a class="metodo" target="_blank" href="https://www.linkedin.com/in/agustín-lautaro-escobar/"><img src="/imagenes/iconos/linkedin.png" alt=""></a>
                         <a target="_blank" href="https://api.whatsapp.com/send?phone=+54 11 4188 4296"><span class="material-icons-outlined metodo metodo-wsp">whatsapp</span></a>
                     </div>
 
@@ -129,36 +131,36 @@
                             method="POST"
                         >
                             <div class="campo">
-                                <label for="email">Email: </label>
                                 <input 
                                     type="email" 
                                     name="_replyto" 
                                     id="email"
                                     placeholder="Tu email"
+                                    required
                                 />
                             </div>
                             <div class="campo">
-                                <label for="nombre">nombre: </label>
                                 <input 
                                     type="text" 
                                     name="nombre" 
                                     id="nombre"
                                     placeholder="Tu nombre"
-                                />
+                                    required
+                                >
                             </div>
                             
                             <div class="campo">
-                                <label for="mensaje">Mensaje: </label>
+                                <label for="mensaje">Mensaje:</label>
                                 <textarea 
                                     name="message" 
                                     id="mensaje" 
                                     cols="1" 
-                                    rows="10"></textarea>
+                                    rows="10"
+                                    ></textarea>
                             </div>
                         
-                            <input class="boton" type="submit" value="Enviar correo">
+                            <input class="boton boton-formulario" type="submit" value="Enviar correo">
                         </form>
-                        <a target="_blank" id="boton-enviar">mail</a>
                     </div>
                </div>
         </section>
@@ -172,8 +174,8 @@
             <img src="imagenes/iconos/linea arriba.png" alt="">
         </a>
     </aside>
+    <script src="/js/app.js" type="module"></script>
 
 </body>
 
-<script src="app.js"></script>
 </html>

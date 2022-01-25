@@ -1,4 +1,5 @@
 @use '../globales/variables' as v;
+@use '../globales/mixins' as m;
 
 .contactame{
     display: flex;
@@ -12,55 +13,48 @@
 }
 
 .formulario{
-    min-width: 500px;
+    min-width: 80vw;
     border-radius: 20px;
-    background-color: #67e8f9;
-    border:3px solid black;
-    padding: 0;
+    background-color: #cbd5e1 ;
+    padding: 40px;
 
-    height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: transform 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 
-    &.mostrar{
-        padding: 40px;
-        height: max-content;
-        opacity:1;
-        margin: 50px 0;
-        height: max-content;
-        transform: translateY(0);
-    }
-    &.ocultar{
-        transform: translateY(-150%);
+    .boton-formulario{
+        width: 100%;
+        font-size: 20px;
     }
 
-    .campo{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-        align-items: center;
-        label{
-            flex: 1 0 20px;
-            font-weight: 700;
-            font-size: 20px;
-        }
-        input,textarea{
-            border-style: none;
-            flex:4; 
-            padding: 10px;
-            border-radius: 10px;
-        }
-        textarea{
-            resize: none;
-        }
-        &:last-of-type{
-            align-items: flex-start;
-        }
+    @include m.tablet{
+        min-width: 50vw;
     }
 }
 
+.campo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    input,textarea{
+        width: 100%;
+        border-style: none;
+        border-radius: 10px;
+        font-size: 20px;
+        padding: 10px;
+    }
+    textarea{
+        resize: none;
+        height: 150px;
+    }
+    label{
+        align-self: flex-start;
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
 
 .contactame{
     .iconos{
@@ -69,16 +63,29 @@
         display: flex;
         justify-content: space-evenly;
 
-        .metodo{
-            background-color: lighten($color: v.$naranja, $amount: 10%);
-            padding: 20px;
-            border-radius: 20%;
-            font-size: 84px;
-            cursor: pointer;
-            text-decoration: none;
-            color: black;
-            user-select: none;
-        }
+
+    }
+}
+.metodo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lighten($color: v.$naranja, $amount: 10%);
+    padding: 20px;
+    border-radius: 50%;
+    font-size: 84px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    user-select: none;
+    transition: all .3s ease-in;
+    &:hover{
+        border-radius: 15%;
+        background-color: v.$naranja;
+    }
+    & img {
+        width: 84px;
+        height: 84px;
     }
 }
 .formas{

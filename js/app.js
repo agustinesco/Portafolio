@@ -1,3 +1,4 @@
+
 const parrafo = document.querySelector('.simularEscritura');
 
 const velocidadEscritura = 60;
@@ -8,17 +9,13 @@ document.addEventListener('DOMContentLoaded', function(){
     
 });
 
-
-
-
 function cargarApp(){
 
     escribirOraciones();
     eventListenerANav();
     agregarFechaFooter();
     agregarObservadores();
-    eventListenersAContacto();
-
+    logicaDescargaCV();
 }
 
 function eventListenerANav(){
@@ -144,7 +141,6 @@ function observadorFlechaVolver() {
                 flecha.classList.remove('mostrar-flecha');
             }else{
                 flecha.classList.add('mostrar-flecha');
-                console.log(logo.style.color);
                 logo.style.color = "#f59e0b";
             }
         })
@@ -155,26 +151,7 @@ function observadorFlechaVolver() {
     observer.observe(header);
 }
 
-function eventListenersAContacto(){
-    const formulario = document.querySelector('.formulario');
-    const botonEmail = document.querySelector('.metodo-email');
-    const botonWsp = document.querySelector('.metodo-wsp');
-
-
-
-    botonEmail.addEventListener('click', ()=>{
-        if(formulario.classList.contains('mostrar')){
-            formulario.classList.add('ocultar')
-            setTimeout(() => {
-                formulario.classList.remove('mostrar')
-                formulario.classList.remove('ocultar')
-            }, 1000);
-        } else {
-            formulario.classList.add('mostrar')
-            setTimeout(() => {
-                formulario.scrollIntoView(true, "smooth");
-            }, 300);
-        }
-    });
+function logicaDescargaCV() {
+    const link = document.createElement('A');
 
 }
