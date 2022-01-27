@@ -16,6 +16,28 @@ function cargarApp(){
     agregarFechaFooter();
     agregarObservadores();
     logicaDescargaCV();
+    cargarProyectos();
+}
+
+async function cargarProyectos() {
+    const data = await fetch('datos.json').then(respuesta => respuesta.json())
+    const proyectos = data.proyectos 
+    const contenedorProyecto= document.querySelector('.proyectos')
+    proyectos.forEach(p => {
+        console.log(p);
+        contenedorProyecto.innerHTML += `
+        <li class="proyecto">
+            <div class="contenido">
+                <h3>${p.titulo}</h3>
+                <img src="imagenes/${p.imagen}" alt="">
+                <p>${p.descripcion}</p>
+            </div>
+            <a target="_blank" class="boton-proyecto" href="${p.link}">Visitar Proyecto</a>      
+        </li>
+        `
+    })
+    
+
 }
 
 function eventListenerANav(){

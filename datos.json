@@ -11,5 +11,31 @@
     "Sólo hay dos industrias que se refieren a sus clientes como 'usuarios'",
     "No te preocupes si no funciona bien. Si todo estuviera correcto, serías despedido de tu trabajo",
     "No te preocupes si no funciona bien. Si todo estuviera correcto, serías despedido de tu trabajo"
+    ],
+    "proyectos":[
+        {
+            "titulo": "rock & EDM Festival",
+            "imagen": "rock festival.png",
+            "descripcion": "Pagina web para un concierto de rock y edm como practica de diseño basico de paginas",
+            "link": "https://agustinesco.github.io/Festival-de-musica/"
+        },
+        {
+            "titulo": "Calculadora simple",
+            "imagen": "calculadora.png",
+            "descripcion": "Calculadora relizada para reforzar la logica con javascript y uso de selectores",
+            "link": "https://agustinesco.github.io/calculadora-simple/"
+        },
+        {
+            "titulo": "Snake",
+            "imagen": "snake.png",
+            "descripcion": "Juego snake realizado para reforzar javascript y el uso de eventListeners",
+            "link": "https://agustinesco.github.io/snake/"
+        },
+        {
+            "titulo": "App Salon",
+            "imagen": "appSalon.png",
+            "descripcion": "Aplicacion de salon de belleza realizada como parte de un curso full Stack , version con mas funcionalidad en Repositorio",
+            "link": "https://agustinesco.github.io/App-Salon/"
+        }
     ]
 }
