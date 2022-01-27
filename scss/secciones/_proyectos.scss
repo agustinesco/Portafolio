@@ -6,32 +6,35 @@
 
 .proyectos{
     margin: 0;
+    padding: 0;
     @include m.tablet{
-        padding: 20px;
-        width: 80%;
-        max-width: 1000px;
-        @include m.grid(3);
-        gap: 30px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-items: center;
+        justify-content:center;
     }
 }
 .proyecto{
-    list-style: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+
     border: 1px solid grey;
     border-radius: 10px;
-    padding:0 15px 15px 15px;
+
+    padding:15px;
     height: fit-content;
-    margin-bottom: 20px;
     width: 90%;
+    margin: 0;
+    margin-bottom: 2rem;
 
     & img{
         width: 90%;
         transition: filter .7s ease-in-out;
         border-radius: 20px;
-        height: 200px;
-        align-self: center;
+        height: 10rem;
     }
     & h3{
         font-size: 20px;
@@ -39,9 +42,10 @@
 
     @include m.tablet{
         margin-bottom: 0;
-        transition: transform .7s ease-in-out;
-        height: 400px;
-        max-width: 400px;
+        transition: transform .3s ease-in-out;
+        width: 20rem;
+        height: 22rem;
+        min-height: fit-content;
         & img{
             filter: blur(2px);
             height: 150px;
@@ -54,30 +58,34 @@
         }
     }
     & p{
-        font-size: 15px;
+        font-size: 1.1rem;
         text-align: center;
     }
 }
+
 .proyecto .contenido{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    gap: .4rem;
 }
 
 .boton-proyecto{
+    justify-self: flex-end;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 5px;
     background-color: v.$naranja ;
     font-weight: 700;
     border-radius: 10px;
     color: white;
     text-align: center;
+    width: 100%;
     &:hover{
         background-color: darken($color: v.$naranja , $amount: 10%);
     }
 
     @include m.tablet{
-        width: fit-content;
 
     }
 }
