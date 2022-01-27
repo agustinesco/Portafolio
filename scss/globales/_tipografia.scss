@@ -5,23 +5,17 @@
 h1,h2,h3,h4{
     text-align: center;
     margin: 0;
-    & ::after{
-        content: "";
-        width: inherit;
-        background-color: red;
-        height: 20px;
-    }
 }
 
 h1{
-    font-size: 40px;
+    font-size: 2rem;
 }
 h2{
-    font-size: 35px;
+    font-size: 1.7rem;
 }
 
 p{
-    font-size: 30px;
+    font-size: 1.2rem;
     text-align: center;
     font-weight: 500;
 }

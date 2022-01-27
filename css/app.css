@@ -388,23 +388,17 @@ h1, h2, h3, h4 {
   text-align: center;
   margin: 0;
 }
-h1 ::after, h2 ::after, h3 ::after, h4 ::after {
-  content: "";
-  width: inherit;
-  background-color: red;
-  height: 20px;
-}
 
 h1 {
-  font-size: 40px;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 35px;
+  font-size: 1.7rem;
 }
 
 p {
-  font-size: 30px;
+  font-size: 1.2rem;
   text-align: center;
   font-weight: 500;
 }
@@ -423,9 +417,11 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
   height: 100%;
   max-width: 95%;
+}
+.contenedor h2 {
+  margin-bottom: 2rem;
 }
 
 header {
@@ -648,7 +644,7 @@ header {
   grid-template-rows: repeat(1, 1fr);
   place-items: center;
   gap: 40px 5px;
-  margin-top: 75px;
+  margin-top: 3rem;
 }
 .iconos-tecnologias .icono {
   height: 100px;
@@ -760,6 +756,7 @@ header {
   border-radius: 20px;
   background-color: #cbd5e1;
   padding: 40px;
+  margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
