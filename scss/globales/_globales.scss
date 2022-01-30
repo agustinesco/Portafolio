@@ -39,7 +39,7 @@ a{
     border-radius: 10px;
     color: white;
     cursor: pointer;
-    &:hover{
+    &:active{
         background-color: darken($color: v.$naranja, $amount: 15%);
     }
 }

@@ -37,5 +37,17 @@
             "descripcion": "Aplicacion de salon de belleza realizada como parte de un curso full Stack , version con mas funcionalidad en Repositorio",
             "link": "https://agustinesco.github.io/App-Salon/"
         }
+    ],
+    "iconosTecnologias":[
+        "php.png",
+        "html-5.png",
+        "css-3.png",
+        "js.png",
+        "java.png",
+        "sass.png",
+        "git.png",
+        "mysql.png",
+        "angular.png",
+        "bootstrap.png"
     ]
 }

@@ -37,7 +37,7 @@ a {
   color: white;
   cursor: pointer;
 }
-.boton:hover {
+.boton:active {
   background-color: #ac6f07;
 }
 

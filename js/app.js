@@ -15,16 +15,16 @@ function cargarApp(){
     eventListenerANav();
     agregarFechaFooter();
     agregarObservadores();
-    logicaDescargaCV();
-    cargarProyectos();
+    cargarProyectosTecnologias();
 }
 
-async function cargarProyectos() {
+async function cargarProyectosTecnologias() {
     const data = await fetch('datos.json').then(respuesta => respuesta.json())
     const proyectos = data.proyectos 
+    const tecnologias = data.iconosTecnologias
+
     const contenedorProyecto= document.querySelector('.proyectos')
     proyectos.forEach(p => {
-        console.log(p);
         contenedorProyecto.innerHTML += `
         <li class="proyecto">
             <div class="contenido">
@@ -37,8 +37,17 @@ async function cargarProyectos() {
         `
     })
     
+    const contenedorTecnologias = document.querySelector('.iconos-tecnologias');
+    tecnologias.forEach(t => {
+        const icono = document.createElement('IMG');
+        icono.classList.add('icono');
+        icono.setAttribute('src', `imagenes/iconos/${t}`)
+        
+        contenedorTecnologias.appendChild(icono)
+    })
 
 }
+
 
 function eventListenerANav(){
     const botones = document.querySelectorAll('.boton-nav');
@@ -173,7 +182,3 @@ function observadorFlechaVolver() {
     observer.observe(header);
 }
 
-function logicaDescargaCV() {
-    const link = document.createElement('A');
-
-}
