@@ -36,8 +36,10 @@
     </header>
     <main>
         <div class="imagen-superior" id="imagen-header">
-            <p class="simularEscritura" id="escritura"></p>
-            <p class="nombre">Hola soy Agustin Escobar</p>
+                <div class="caracteristicas-container">
+                    <p class="presentacion">Hola soy Agustin Escobar </p>
+                    <p class="caracteristicas"></p>
+                </div>
         </div>
         
         <section class="sobreMi " id="informacion">
@@ -81,7 +83,9 @@
                     <p class="formas">Formas de contacto:</p>
                     <div class="iconos">
                         <a class="metodo" target="_blank" href="https://www.linkedin.com/in/agustín-lautaro-escobar/"><img src="/imagenes/iconos/linkedin.png" alt=""></a>
-                        <a target="_blank" href="https://api.whatsapp.com/send?phone=+54 11 4188 4296"><span class="material-icons-outlined metodo metodo-wsp">whatsapp</span></a>
+                        <span class="material-icons-outlined metodo metodo-correo">email</span>
+                        <a href="https://api.whatsapp.com/send?phone=+54 11 4188 4296"><span class="material-icons-outlined metodo metodo-wsp">whatsapp</span></a>
+                        
                     </div>
 
                     <div class="contenedor-formulario">
@@ -127,15 +131,17 @@
         </section>
 
         <footer class="footer">
-            <h3 class="footer-texto">Pagina desarrollada por Agustin Lautaro Escobar - &#169 </h3>
+            <h3 class="footer-texto">Desarrollado por Agustin Lautaro Escobar - &#169 </h3>
         </footer>
     </main>
 
-    <aside class="volver ">
+    <aside class="volver">
         <a class="flecha-volver centrado" href="#imagen-header">
             <img src="imagenes/iconos/linea arriba.png" alt="">
         </a>
     </aside>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/js/app.js" type="module"></script>
 
 </body>

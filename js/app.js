@@ -1,9 +1,3 @@
-
-const parrafo = document.querySelector('.simularEscritura');
-
-const velocidadEscritura = 60;
-const delayEscritura = 3000;
-
 document.addEventListener('DOMContentLoaded', function(){
     cargarApp();
     
@@ -11,11 +5,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
 function cargarApp(){
 
-    escribirOraciones();
+    escribirCaracteristicas();
     eventListenerANav();
     agregarFechaFooter();
     agregarObservadores();
     cargarProyectosTecnologias();
+    logicaContactame();
 }
 
 async function cargarProyectosTecnologias() {
@@ -23,9 +18,8 @@ async function cargarProyectosTecnologias() {
     const proyectos = data.proyectos 
     const tecnologias = data.iconosTecnologias
 
-    const contenedorProyecto= document.querySelector('.proyectos')
     proyectos.forEach(p => {
-        contenedorProyecto.innerHTML += `
+        var plantilla =  `
         <li class="proyecto">
             <div class="contenido">
                 <h3>${p.titulo}</h3>
@@ -35,150 +29,158 @@ async function cargarProyectosTecnologias() {
             <a target="_blank" class="boton-proyecto" href="${p.link}">Visitar Proyecto</a>      
         </li>
         `
+
+        $('.proyectos').append(plantilla);
     })
-    
-    const contenedorTecnologias = document.querySelector('.iconos-tecnologias');
     tecnologias.forEach(t => {
         const icono = document.createElement('IMG');
         icono.classList.add('icono');
         icono.setAttribute('src', `imagenes/iconos/${t}`)
         
-        contenedorTecnologias.appendChild(icono)
+        $('.iconos-tecnologias').append(icono)
     })
 
 }
 
 
 function eventListenerANav(){
-    const botones = document.querySelectorAll('.boton-nav');
-    const btnMobile = document.querySelector('.boton-mobile')
-    const botonesNav = document.querySelector('.botones-nav')
+    const btnMobile = $('.boton-mobile')
+    const botonesNav = $('.botones-nav')
+    
+    $('.boton-nav').click((e)=>{
+        //si ya hay otro seleccionado lo saco
+        const seleccionado = $('.boton-nav.seleccionado')
+        if(seleccionado) seleccionado.removeClass('seleccionado');
 
-    botones.forEach(boton => {
-            boton.addEventListener('click', (e)=>{
-            const botonSeleccionado = document.querySelector('.boton-nav.seleccionado');
-            if(botonSeleccionado) botonSeleccionado.classList.remove('seleccionado');
-            boton.classList.add('seleccionado');
-            if(botonesNav.classList.contains('mostrar')){
-                setTimeout(() => {
-                    botonesNav.classList.remove('mostrar')
-                    btnMobile.textContent = "menu"
-                }, 700);
-            }
-        })
-    });
+        //Agregar seleccionado al boton
+        $(e.target).addClass('seleccionado');
 
-    btnMobile.addEventListener('click', ()=>{
+        //logica en mobile
+        if(botonesNav.hasClass('mostrar')){
+            setTimeout(() => {
+                botonesNav.removeClass('mostrar')
+                btnMobile.text("menu"); 
+            }, 700);
+        }
+    })
 
-        if(botonesNav.classList.contains('mostrar')){
-            botonesNav.classList.remove('mostrar')
-            btnMobile.textContent = "menu"
+    $('.boton-mobile').click(()=>{
+        if(botonesNav.hasClass('mostrar')){
+            botonesNav.removeClass('mostrar')
+            btnMobile.text("menu") 
         } else {
-            botonesNav.classList.add('mostrar')
-            btnMobile.textContent = "close"
+            botonesNav.addClass('mostrar')
+            btnMobile.text('close')
         }
     })
 }
 
-async function escribirOraciones(){
+async function escribirCaracteristicas(){
+    const car = $('.caracteristicas')
+    const velocidadEscritura = 60;
+    const delayBorrado = 1000;
+    const delayEscritura = 3000;
     try{
         const url ="datos.json"
         const resultado = await fetch(url)
         .then(respuesta => respuesta.json())
-        
-        escribir(resultado.oraciones,0,0)
-        
+        var caracteristicas = resultado.caracteristicas;
+
+        escribir(0);
     }
     catch(error){
         console.log(error)
     }
-    function escribir(oraciones , i, numeroOracion) {
-        //escribir la palabra
-        if(i<oraciones[numeroOracion].length){
-            parrafo.textContent=parrafo.textContent.substring(0,i) + oraciones[numeroOracion].charAt(i) +"|";
-            i++;
-            setTimeout(() => {
-                escribir(oraciones, i ,numeroOracion);
-                
-            }, velocidadEscritura);
-        }
-        //caso base, escribi la palabra y tengo que saltar a la siguiente oracion
-        else{
-            i=0;
+
+    function escribir(i){
+        car.text('');
+
+        i == caracteristicas.length-1 ? escribirPalabra(0,1) : escribirPalabra(i,1);
+    }
+
+    function escribirPalabra(indice, letra){
+        car.text(caracteristicas[indice].substring(0,letra))
+        
+        if(letra === caracteristicas[indice].length){
+            setTimeout(()=>{
+                borrarPalabra(indice)
+            },delayEscritura)
+        } else {
+            setTimeout(()=>{
+                escribirPalabra(indice, letra+1);
+            },velocidadEscritura)
             
-            if(numeroOracion<oraciones.length-1)numeroOracion++;
-            // llegue al final de la lista y tengo que reiniciar
-            else numeroOracion=0;
+        }
+    }
+
+    function borrarPalabra(indice){
+        car.text(car.text().substring(0,car.text().length-1));
+
+        if(car.text().length == 0){
+            setTimeout(()=>{
+                escribir(indice+1)
+            },delayBorrado);
+        } else {
             setTimeout(() => {
-                borrar(oraciones,i,numeroOracion);
-                
-            }, delayEscritura);
+                borrarPalabra(indice)
+            }, velocidadEscritura);
         }
         
     }
-    function borrar(oraciones,i,numeroOracion){
-        if(parrafo.innerHTML.length>0){
-            parrafo.textContent=parrafo.textContent.substring(0,parrafo.textContent.length-1);
-    
-            setTimeout(() => {
-                    borrar(oraciones,i,numeroOracion);
-            }, velocidadEscritura/2);
-        }
-        else setTimeout(() => {
-            escribir(oraciones,i,numeroOracion);
-            
-        }, delayEscritura/6);
-    }
-    
+
 }
 
 function agregarFechaFooter() {
 
     const date = new Date()
     const año = date.getFullYear();
-    const textFooter = document.querySelector('.footer-texto');
-    textFooter.textContent = textFooter.textContent + " "+ año
+    $('.footer-texto').text($('.footer-texto').text() + " " + año);
 
 }
 
 function agregarObservadores() {
     observadorSobreMi();
     observadorFlechaVolver();
-}
 
-function observadorSobreMi() {
-    let observer = new IntersectionObserver(
-        entries=>{
+    function observadorSobreMi() {
+        let observer = new IntersectionObserver(
+            entries=>{
+                entries.forEach(entry=>{
+                    entry.target.classList.toggle('animar',entry.isIntersecting);
+                    if(entry.isIntersecting) observer.unobserve(entry.target);
+                })
+        
+            },{
+                threshold:0.50
+            });
+        
+            observer.observe($(".informacion-sobreMi")[0]);
+    }
+    
+    function observadorFlechaVolver() {
+        let observer = new IntersectionObserver(entries=>{
             entries.forEach(entry=>{
-                entry.target.classList.toggle('animar',entry.isIntersecting);
-                if(entry.isIntersecting) observer.unobserve(entry.target);
+                if(entry.isIntersecting){
+                    $('.logo').css("color","#ffffff"); 
+                    $('.flecha-volver').removeClass('mostrar-flecha');
+                }else{
+                    $('.flecha-volver').addClass('mostrar-flecha');
+                    $('.logo').css("color","#f59e0b");
+                }
             })
     
-        },{
-            threshold:0.50
-        });
+        })
     
-        const sobreMi =document.querySelector('.informacion-sobreMi');
-        observer.observe(sobreMi);
+        const header = document.querySelector('.imagen-superior');
+        observer.observe($('.imagen-superior')[0]);
+    }
 }
 
-function observadorFlechaVolver() {
-    const logo = document.querySelector('.logo')
-    let observer = new IntersectionObserver(entries=>{
-        entries.forEach(entry=>{
-            const flecha = document.querySelector('.flecha-volver');
-            if(entry.isIntersecting){
-                logo.style.color = "#ffffff";
-                flecha.classList.remove('mostrar-flecha');
-            }else{
-                flecha.classList.add('mostrar-flecha');
-                logo.style.color = "#f59e0b";
-            }
-        })
-
+function logicaContactame(){
+    $(".contenedor-formulario").slideUp();
+    $('.metodo-correo').click(()=>{
+        $(".contenedor-formulario").slideToggle(700);
+        $(".contenedor-formulario").scrollTop();
     })
-
-    const header = document.querySelector('.imagen-superior');
-    observer.observe(header);
 }
 
