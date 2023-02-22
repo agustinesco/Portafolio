@@ -134,7 +134,8 @@ function agregarFechaFooter() {
 
     const date = new Date()
     const año = date.getFullYear();
-    $('.footer-texto').text($('.footer-texto').text() + " " + año);
+    let footer_element = $('.footer-texto')
+    footer_element.text(footer_element.text() + " " + año);
 
 }
 
