@@ -47,14 +47,10 @@
         height: 22rem;
         min-height: fit-content;
         & img{
-            filter: blur(2px);
             height: 150px;
         }
         &:hover{
             transform: scale(1.1);
-            & img{
-                filter: blur(0);
-            }
         }
     }
     & p{
