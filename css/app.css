@@ -729,14 +729,10 @@ header {
     min-height: fit-content;
   }
   .proyecto img {
-    filter: blur(2px);
     height: 150px;
   }
   .proyecto:hover {
     transform: scale(1.1);
-  }
-  .proyecto:hover img {
-    filter: blur(0);
   }
 }
 .proyecto p {
