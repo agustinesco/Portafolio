@@ -77,7 +77,7 @@ function eventListenerANav(){
 
 async function escribirCaracteristicas(){
     const car = $('.caracteristicas')
-    const velocidadEscritura = 60;
+    const velocidadEscritura = 40;
     const delayBorrado = 1000;
     const delayEscritura = 3000;
     try{
