@@ -48,19 +48,12 @@ function eventListenerANav(){
     const botonesNav = $('.botones-nav')
     
     $('.boton-nav').click((e)=>{
-        //si ya hay otro seleccionado lo saco
-        const seleccionado = $('.boton-nav.seleccionado')
-        if(seleccionado) seleccionado.removeClass('seleccionado');
-
-        //Agregar seleccionado al boton
-        $(e.target).addClass('seleccionado');
-
         //logica en mobile
         if(botonesNav.hasClass('mostrar')){
             setTimeout(() => {
                 botonesNav.removeClass('mostrar')
                 btnMobile.text("menu"); 
-            }, 700);
+            }, 900);
         }
     })
 
@@ -73,6 +66,8 @@ function eventListenerANav(){
             btnMobile.text('close')
         }
     })
+
+    agregarOberserversABotonesNav()
 }
 
 async function escribirCaracteristicas(){
@@ -183,5 +178,29 @@ function logicaContactame(){
         $(".contenedor-formulario").slideToggle(700);
         $(".contenedor-formulario").scrollTop();
     })
+}
+
+function agregarOberserversABotonesNav(){
+        let observer = new IntersectionObserver(
+            entries=>{
+                entries.forEach(entry=>{
+                    if(entry.isIntersecting){
+                    let seleccionado = $('.boton-nav.seleccionado')
+                    if(seleccionado) seleccionado.removeClass('seleccionado');
+                    let botonNav = $(`[data-nav-boton="${entry.target.id}"]`)
+                    console.log(botonNav)
+                    
+                    if(botonNav) botonNav.addClass("seleccionado")
+                    }
+                })
+        
+            },{
+                threshold:0.25
+            });
+        $("section").each(function(index, element){
+            console.log(element)
+            observer.observe(element)
+        })
+        observer.observe($("#imagen-header")[0])
 }
 
